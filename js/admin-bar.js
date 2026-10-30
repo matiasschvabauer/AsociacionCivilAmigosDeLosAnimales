@@ -81,6 +81,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function initAdminTopbar() {
     if (typeof currentUser !== 'undefined' && currentUser && currentUser.isAdmin) {
         renderAdminTopbar(currentUser);
+    } else {
+        const topbar = document.getElementById('reserva-admin-topbar');
+        if (topbar) topbar.remove();
+        document.body.classList.remove('has-admin-topbar');
     }
 }
 
@@ -93,7 +97,7 @@ function renderAdminTopbar(user) {
             position: fixed;
             top: 0; left: 0; right: 0;
             height: 42px;
-            background: #1b4332;
+            background: #174A4A;
             color: #ffffff;
             display: flex;
             align-items: center;
@@ -114,8 +118,8 @@ function renderAdminTopbar(user) {
             gap: 10px;
         }
         .admin-topbar-badge {
-            background: #e9c46a;
-            color: #1b4332;
+            background: #C96545;
+            color: #ffffff;
             padding: 2px 8px;
             border-radius: 12px;
             font-size: 0.75rem;
@@ -154,14 +158,16 @@ function renderAdminTopbar(user) {
     topbar.id = 'reserva-admin-topbar';
     topbar.innerHTML = `
         <div class="admin-topbar-left">
-            <span class="admin-topbar-badge"><i class="fas fa-crown"></i> Modo Administrador</span>
-            <span>Conectado como: <strong>${user.name || user.email}</strong></span>
+            <span class="admin-topbar-badge"><i class="fas fa-crown"></i> Modo Administrador (Pruebas)</span>
+            <span>Conectado: <strong>${user.name || user.email}</strong></span>
         </div>
-        <div class="admin-topbar-actions">
-            <a href="adopciones.html" class="admin-topbar-btn"><i class="fas fa-dog"></i> Adopciones</a>
-            <a href="refugio.html#metas-donaciones" class="admin-topbar-btn"><i class="fas fa-hand-holding-heart"></i> Metas & Necesidades</a>
-            <a href="foro.html" class="admin-topbar-btn"><i class="fas fa-comments"></i> Moderar Foro</a>
-            <button class="admin-topbar-btn" onclick="logout()" style="background: rgba(239,68,68,0.3); border-color: rgba(239,68,68,0.5);"><i class="fas fa-sign-out-alt"></i> Salir</button>
+        <div class="admin-topbar-actions" style="overflow-x: auto; max-width: 70vw; padding-bottom: 2px;">
+            <a href="adopciones.html" class="admin-topbar-btn" title="Agregar o editar mascotas en adopción"><i class="fas fa-paw"></i> Adopta</a>
+            <a href="final-feliz.html" class="admin-topbar-btn" title="Agregar o editar casos de final feliz"><i class="fas fa-heart"></i> Final Feliz</a>
+            <a href="historias.html" class="admin-topbar-btn" title="Publicar o editar historias de rescate"><i class="fas fa-book-open"></i> Historias</a>
+            <a href="refugio.html#necesidades-hoy" class="admin-topbar-btn" title="Gestionar necesidades urgentes"><i class="fas fa-hand-holding-heart"></i> Necesidades</a>
+            <a href="foro.html" class="admin-topbar-btn" title="Moderar avisos de perdidos y encontrados"><i class="fas fa-comments"></i> Foro</a>
+            <button class="admin-topbar-btn" onclick="logout()" style="background: rgba(239,68,68,0.38); border-color: rgba(239,68,68,0.6); font-weight: 700;"><i class="fas fa-sign-out-alt"></i> Salir</button>
         </div>
     `;
     document.body.insertBefore(topbar, document.body.firstChild);

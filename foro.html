@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script src="js/mobile-detect.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro - Reserva Canina Gálvez</title>
-    <meta name="description" content="Espacio de encuentro vecinal en Gálvez para publicar mascotas perdidas, consultas veterinarias y pedidos de ayuda.">
+    <title>Foro - Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Espacio de encuentro vecinal en Gálvez para publicar animales perdidos/encontrados, consultas y pedidos de ayuda. Asociación Civil Amigos de los Animales No Humanos.">
     <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -21,12 +22,11 @@
         <div class="container top-bar-content">
             <div class="top-bar-info">
                 <span><i class="fas fa-location-dot"></i> Gálvez, Santa Fe, Argentina</span>
-                <span><i class="fas fa-comments"></i> Comunidad Vecinal & Ayuda Animal</span>
             </div>
             <div class="top-bar-actions">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -35,24 +35,73 @@
     <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="container header-wrapper">
-            <a href="index.html" class="logo-brand">
-                <img src="assets/img/LogoReserva.png" alt="Reserva Canina Gálvez" class="logo-img-rectangular">
+            <a href="index.html" class="logo-brand" title="Asociación Civil Amigos de los Animales">
+                <img src="assets/img/logo_simbolo.png" alt="Asociación Civil Amigos de los Animales" class="logo-symbol-img">
+                <div class="logo-reveal-group">
+                    <span class="logo-divider-bar"></span>
+                    <div class="logo-text-details">
+                        <span class="logo-text-title">ASOCIACIÓN CIVIL AMIGOS</span>
+                        <span class="logo-text-subtitle">DE LOS ANIMALES NO HUMANOS</span>
+                        <span class="logo-text-num">Personería Jurídica Nº 1769</span>
+                    </div>
+                </div>
             </a>
 
             <nav class="nav-links">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="quienes-somos.html" class="nav-link">Información</a>
-                <a href="adopciones.html" class="nav-link">Adopciones</a>
-                <a href="refugio.html" class="nav-link">Refugio</a>
-                <a href="leyes.html" class="nav-link">Leyes</a>
-                <a href="foro.html" class="nav-link active">Foro</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="index.html" class="nav-link ">Inicio</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="quienes-somos.html" class="nav-link ">Información <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="quienes-somos.html#sobre-nosotros" class="dropdown-link"><i class="fas fa-landmark"></i> Quiénes Somos</a>
+                        <a href="quienes-somos.html#documentos-legales" class="dropdown-link"><i class="fas fa-file-contract"></i> Estatuto y Legal</a>
+                        <a href="quienes-somos.html#veterinarios" class="dropdown-link"><i class="fas fa-user-doctor"></i> Veterinarios</a>
+                        <a href="quienes-somos.html#faq" class="dropdown-link"><i class="fas fa-circle-question"></i> Preguntas Frecuentes</a>
+                        <a href="quienes-somos.html#contacto" class="dropdown-link"><i class="fas fa-envelope"></i> Contacto</a>
+                    </div>
+                </div>
+
+                <a href="adopciones.html" class="nav-link ">Adopta</a>
+                <a href="historias.html" class="nav-link ">Historias</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="final-feliz.html" class="nav-link ">Final Feliz <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="final-feliz.html#adopciones-exitosas" class="dropdown-link"><i class="fas fa-heart-circle-check"></i> Casos Adoptados</a>
+                        <a href="final-feliz.html#galeria-collage" class="dropdown-link"><i class="fas fa-images"></i> Galería y Collage</a>
+                    </div>
+                </div>
+
+                <div class="nav-item-dropdown">
+                    <a href="cuidado-responsable.html" class="nav-link ">Cuidado Responsable <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="cuidado-responsable.html#pautas-cuidado" class="dropdown-link"><i class="fas fa-shield-cat"></i> Guía y Consejos</a>
+                        <a href="cuidado-responsable.html#adopciones-felinas" class="dropdown-link"><i class="fas fa-cat"></i> Adopciones Felinas</a>
+                        <a href="cuidado-responsable.html#leyes" class="dropdown-link"><i class="fas fa-scale-balanced"></i> Leyes y Denuncias</a>
+                    </div>
+                </div>
+
+                <a href="hacete-socio.html" class="nav-link ">Hacete Socio</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="refugio.html" class="nav-link ">Necesidades <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="refugio.html#necesidades-hoy" class="dropdown-link"><i class="fas fa-bell"></i> Urgentes de Hoy</a>
+                        <a href="refugio.html#insumos-permanentes" class="dropdown-link"><i class="fas fa-boxes-packing"></i> Insumos Permanentes</a>
+                        <a href="refugio.html#voluntariado" class="dropdown-link"><i class="fas fa-hands-holding-circle"></i> Sumate al Equipo</a>
+                    </div>
+                </div>
+
+                <a href="foro.html" class="nav-link active">Perdidos y Encontrados</a>
             </nav>
 
             <div class="header-right-actions">
-                <button class="theme-toggle-btn" id="theme-toggle"><i class="fas fa-moon"></i></button>
-                <div class="auth-status-container"></div>
-                <button class="mobile-menu-btn" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+                <a href="donaciones.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-heart"></i> Cómo aportar
+                </a>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -62,11 +111,16 @@
         <div class="mobile-nav-links">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="quienes-somos.html" class="nav-link">Información</a>
-            <a href="adopciones.html" class="nav-link">Adopciones</a>
-            <a href="refugio.html" class="nav-link">Refugio</a>
-            <a href="leyes.html" class="nav-link">Leyes</a>
-            <a href="foro.html" class="nav-link active">Foro</a>
-            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="adopciones.html" class="nav-link">Adopta</a>
+            <a href="historias.html" class="nav-link">Historias</a>
+            <a href="final-feliz.html" class="nav-link">Final Feliz</a>
+            <a href="cuidado-responsable.html" class="nav-link">Cuidado Responsable</a>
+            <a href="hacete-socio.html" class="nav-link">Hacete Socio</a>
+            <a href="refugio.html" class="nav-link">Necesidades</a>
+            <a href="foro.html" class="nav-link active">Perdidos y Encontrados</a>
+            <a href="donaciones.html" class="btn btn-secondary" style="margin-top: 10px;">
+                <i class="fas fa-heart"></i> Cómo aportar
+            </a>
         </div>
     </div>
 
@@ -74,8 +128,8 @@
     <section style="background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color:#fff; padding: 50px 0; text-align: center;">
         <div class="container">
             <span class="badge badge-secondary" style="margin-bottom: 12px;">Comunidad Gálvez</span>
-            <h1 style="color:#fff; font-size: 2.3rem; margin-bottom: 8px;">Foro Abierto de Ayuda y Búsqueda</h1>
-            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Espacio para buscar mascotas perdidas, pedir hogares de tránsito y consultar dudas médicas.</p>
+            <h1 style="color:#fff; font-size: 2.3rem; margin-bottom: 8px;">Perdidos y Encontrados</h1>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Espacio comunitario para reportar mascotas perdidas, rescatadas en la vía pública o que necesitan tránsito urgente en Gálvez.</p>
         </div>
     </section>
 
@@ -86,31 +140,31 @@
             <!-- Statistics Bar -->
             <div class="forum-stats-grid">
                 <div class="forum-stat-card">
-                    <div class="forum-stat-icon"><i class="fas fa-comments"></i></div>
+                    <div class="forum-stat-icon"><i class="fas fa-bullhorn"></i></div>
                     <div>
                         <div class="forum-stat-number" id="stat-total-threads">0</div>
-                        <div class="forum-stat-label">Hilos Activos</div>
+                        <div class="forum-stat-label">Avisos Activos</div>
                     </div>
                 </div>
                 <div class="forum-stat-card">
                     <div class="forum-stat-icon" style="background: #e8f5e9; color: #2e7d32;"><i class="fas fa-check-circle"></i></div>
                     <div>
                         <div class="forum-stat-number" id="stat-solved-cases">0</div>
-                        <div class="forum-stat-label">Casos Resueltos</div>
+                        <div class="forum-stat-label">Reencuentros</div>
                     </div>
                 </div>
                 <div class="forum-stat-card">
                     <div class="forum-stat-icon" style="background: #e0f2f1; color: #00695c;"><i class="fas fa-reply-all"></i></div>
                     <div>
                         <div class="forum-stat-number" id="stat-total-replies">0</div>
-                        <div class="forum-stat-label">Respuestas</div>
+                        <div class="forum-stat-label">Comentarios</div>
                     </div>
                 </div>
                 <div class="forum-stat-card">
                     <div class="forum-stat-icon" style="background: #fff3e0; color: #e65100;"><i class="fas fa-users"></i></div>
                     <div>
                         <div class="forum-stat-number" id="stat-active-users">0</div>
-                        <div class="forum-stat-label">Vecinos Activos</div>
+                        <div class="forum-stat-label">Vecinos Conectados</div>
                     </div>
                 </div>
             </div>
@@ -118,12 +172,15 @@
             <!-- Header Actions Box -->
             <div class="forum-header-box">
                 <div>
-                    <h2>Hilos de Discusión y Búsquedas Activas</h2>
+                    <h2>Avisos de Búsqueda y Ayuda Comunitaria</h2>
                     <p style="color: var(--text-muted); font-size: 0.95rem;">Comunidad solidaria de Gálvez. Publicá, ayudá y respondé en tiempo real.</p>
                 </div>
-                <button class="btn btn-primary" onclick="handleCreateThreadClick()">
-                    <i class="fas fa-plus-circle"></i> Crear Nuevo Hilo
-                </button>
+                <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                    <div class="auth-status-container"></div>
+                    <button class="btn btn-primary" onclick="handleCreateThreadClick()">
+                        <i class="fas fa-plus-circle"></i> Publicar Aviso / Alerta
+                    </button>
+                </div>
             </div>
 
             <!-- Search and Sort Toolbar -->
@@ -168,32 +225,62 @@
 
             <!-- Thread List -->
             <div class="thread-list" id="forum-threads-list">
-                <!-- Rendered dynamically by js/foro.js -->
+                <div class="logo-loader-box">
+                    <div class="logo-loader-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 326" class="logo-loader-svg" aria-label="Cargando">
+                            <path class="logo-loader-path" d="M 257 1 L 254 2 L 252 4 L 251 6 L 250 8 L 246 17 L 240 33 L 232 48 L 229 55 L 227 60 L 227 66 L 231 70 L 237 70 L 241 66 L 243 61 L 245 57 L 247 50 L 255 32 L 256 30 L 259 27 L 262 30 L 264 35 L 269 43 L 270 47 L 280 66 L 282 68 L 284 69 L 381 69 L 383 68 L 385 66 L 387 62 L 390 56 L 395 43 L 401 32 L 404 30 L 405 32 L 406 34 L 411 46 L 412 51 L 415 56 L 418 65 L 419 69 L 420 76 L 420 106 L 419 140 L 416 143 L 413 144 L 408 145 L 389 149 L 382 151 L 375 153 L 372 154 L 370 155 L 367 158 L 367 160 L 368 162 L 371 163 L 374 163 L 383 160 L 390 158 L 409 154 L 413 152 L 417 153 L 417 160 L 416 166 L 414 168 L 412 169 L 394 169 L 381 170 L 374 171 L 371 172 L 369 173 L 368 175 L 368 178 L 369 180 L 374 181 L 382 179 L 394 178 L 407 177 L 411 177 L 413 179 L 412 182 L 411 185 L 408 192 L 407 194 L 406 196 L 404 199 L 402 202 L 399 206 L 393 212 L 387 217 L 384 219 L 380 221 L 374 224 L 369 226 L 365 227 L 357 229 L 351 230 L 341 231 L 329 231 L 312 230 L 304 229 L 298 228 L 293 227 L 284 224 L 277 221 L 272 218 L 269 216 L 265 213 L 256 204 L 253 200 L 251 197 L 249 194 L 248 192 L 247 190 L 245 185 L 241 173 L 240 166 L 239 163 L 237 158 L 231 146 L 229 143 L 226 139 L 223 135 L 212 124 L 208 121 L 204 118 L 199 115 L 194 112 L 192 111 L 190 110 L 185 108 L 176 105 L 172 104 L 168 103 L 161 102 L 142 102 L 135 103 L 130 104 L 126 105 L 119 107 L 114 109 L 102 115 L 97 118 L 93 121 L 89 124 L 79 134 L 75 139 L 73 142 L 71 145 L 66 154 L 64 159 L 61 169 L 60 171 L 55 176 L 41 189 L 31 200 L 22 212 L 20 215 L 18 218 L 15 223 L 12 228 L 10 232 L 7 238 L 3 250 L 2 255 L 1 263 L 1 268 L 2 277 L 3 280 L 4 283 L 5 285 L 6 287 L 8 290 L 16 298 L 19 300 L 21 301 L 23 302 L 28 304 L 32 305 L 38 306 L 54 306 L 61 313 L 64 315 L 72 319 L 75 320 L 80 321 L 88 322 L 188 322 L 191 319 L 191 312 L 188 309 L 186 308 L 174 308 L 93 309 L 85 308 L 81 307 L 78 306 L 70 302 L 62 294 L 60 291 L 59 289 L 58 287 L 57 284 L 56 280 L 55 274 L 56 268 L 57 264 L 60 258 L 66 250 L 67 248 L 68 246 L 69 243 L 70 239 L 71 223 L 71 192 L 72 184 L 73 178 L 74 173 L 75 170 L 76 167 L 78 162 L 81 156 L 87 147 L 102 132 L 105 130 L 110 127 L 118 123 L 123 121 L 126 120 L 133 118 L 138 117 L 147 116 L 156 116 L 165 117 L 170 118 L 174 119 L 177 120 L 182 122 L 186 125 L 188 125 L 190 126 L 199 132 L 204 136 L 210 142 L 215 148 L 218 152 L 221 157 L 222 159 L 223 161 L 225 166 L 228 179 L 232 191 L 238 203 L 244 212 L 255 223 L 259 226 L 262 228 L 265 230 L 279 237 L 288 240 L 292 241 L 296 242 L 302 243 L 310 244 L 326 245 L 348 245 L 356 244 L 361 243 L 365 242 L 375 239 L 380 237 L 384 235 L 390 232 L 393 230 L 396 228 L 401 224 L 411 214 L 414 210 L 416 207 L 418 204 L 420 200 L 423 194 L 427 179 L 429 177 L 431 176 L 434 176 L 457 177 L 465 178 L 469 179 L 477 182 L 483 181 L 484 179 L 484 177 L 483 175 L 481 173 L 478 172 L 474 171 L 470 170 L 464 169 L 452 168 L 432 168 L 430 166 L 430 162 L 431 154 L 432 150 L 434 148 L 438 147 L 445 146 L 455 145 L 473 146 L 479 146 L 481 145 L 482 143 L 482 140 L 479 137 L 474 136 L 453 136 L 445 137 L 439 138 L 438 139 L 433 138 L 433 112 L 435 96 L 434 74 L 433 68 L 432 63 L 431 59 L 430 56 L 427 48 L 420 30 L 414 15 L 411 8 L 410 6 L 406 2 L 400 2 L 397 5 L 394 11 L 390 20 L 383 34 L 378 47 L 375 53 L 372 55 L 315 55 L 304 54 L 296 55 L 293 55 L 291 54 L 289 52 L 285 45 L 277 30 L 265 5 L 262 2 L 260 1 Z M 57 198 L 57 203 L 56 237 L 55 240 L 54 242 L 48 250 L 45 256 L 44 259 L 43 262 L 42 266 L 42 282 L 44 287 L 43 291 L 38 291 L 34 290 L 29 288 L 26 286 L 20 280 L 19 278 L 18 276 L 17 273 L 16 266 L 17 259 L 20 248 L 21 245 L 27 233 L 30 228 L 32 225 L 41 213 L 46 208 L 50 202 L 53 200 Z" fill="currentColor" fill-rule="evenodd" />
+                            <path class="logo-loader-detail" d="M 148 228 L 144 229 L 141 231 L 139 234 L 138 237 L 138 240 L 139 243 L 140 245 L 141 247 L 145 254 L 147 256 L 147 257 L 148 258 L 150 259 L 152 260 L 159 260 L 161 259 L 164 256 L 168 249 L 172 241 L 172 237 L 171 234 L 169 232 L 169 231 L 168 230 L 166 229 L 161 228 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 190 200 L 188 201 L 185 204 L 184 206 L 184 211 L 185 213 L 188 216 L 190 217 L 195 217 L 197 216 L 200 213 L 201 211 L 201 206 L 200 204 L 197 201 L 195 200 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 115 200 L 113 201 L 110 204 L 109 206 L 109 211 L 110 213 L 113 216 L 116 217 L 120 217 L 122 216 L 125 213 L 126 211 L 126 206 L 125 204 L 122 201 L 120 200 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 321 149 L 319 150 L 317 151 L 316 152 L 315 154 L 314 156 L 314 162 L 315 165 L 320 174 L 322 177 L 324 179 L 326 180 L 328 181 L 333 181 L 335 180 L 340 175 L 343 170 L 347 162 L 347 156 L 346 154 L 344 151 L 342 150 L 340 149 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 364 121 L 360 125 L 360 133 L 363 136 L 365 137 L 370 137 L 374 135 L 374 134 L 376 132 L 376 126 L 374 124 L 374 123 L 373 122 L 371 121 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 289 121 L 285 125 L 284 129 L 285 133 L 288 136 L 290 137 L 296 137 L 298 136 L 300 134 L 301 132 L 301 126 L 300 124 L 297 121 Z" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="logo-loader-text">
+                        Cargando avisos de Perdidos y Encontrados...
+                        <span class="logo-loader-dots"><span>.</span><span>.</span><span>.</span></span>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <!-- MODAL: LOGIN / AUTH (GOOGLE / GMAIL REAL) -->
+        <!-- MODAL: LOGIN / AUTH & ADMIN -->
     <div class="modal-overlay" id="login-modal">
-        <div class="modal-container">
+        <div class="modal-container" style="max-width: 490px;">
             <button class="modal-close-btn" onclick="closeModal('login-modal')"><i class="fas fa-times"></i></button>
-            <div style="text-align: center; margin-bottom: 25px;">
-                <img src="assets/img/cropped_circle_image.png" alt="Logo Reserva Canina" class="logo-img-circle" style="width:70px; height:70px; margin: 0 auto 15px auto;">
-                <h2>Acceso a la Comunidad Gálvez</h2>
-                <p style="color: var(--text-muted); font-size: 0.9rem;">Para mantener un entorno seguro y real, verificá tu identidad con tu cuenta de Gmail.</p>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="width:68px; height:68px; margin: 0 auto 12px auto;">
+                <h2 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 6px;">Acceso y Administración</h2>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.4; margin: 0;">Podés ingresar con rol de Administrador para pruebas o iniciar sesión con Google.</p>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px;">
-                <button class="btn" onclick="loginWithGoogle()" style="background: #ffffff; color: #444; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 14px; font-weight: 700;">
-                    <i class="fab fa-google" style="color: #ea4335; font-size: 1.2rem;"></i> Iniciar Sesión con Google (Gmail)
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px;">
+                <button class="btn btn-secondary" onclick="loginAsTemporaryAdmin()" style="width: 100%; padding: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.98rem; background: #C96545; color: white; border: none; cursor: pointer; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);">
+                    <i class="fas fa-crown" style="color: #ffd166;"></i> Ingresar como Administrador (Modo Pruebas)
+                </button>
+                <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin: -4px 0 6px 0;">
+                    <i class="fas fa-bolt" style="color: #C96545;"></i> Acceso instantáneo para agregar mascotas en Adopta, metas en Refugio, subir fotos y moderar localmente.
+                </p>
+
+                <div style="display: flex; align-items: center; gap: 10px; margin: 4px 0;">
+                    <span style="flex: 1; height: 1px; background: var(--border-color);"></span>
+                    <span style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">O verificación comunitaria</span>
+                    <span style="flex: 1; height: 1px; background: var(--border-color);"></span>
+                </div>
+
+                <button class="btn" onclick="loginWithGoogle()" style="width: 100%; background: #ffffff; color: #444; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.92rem; border-radius: var(--radius-sm);">
+                    <i class="fab fa-google" style="color: #ea4335; font-size: 1.15rem;"></i> Iniciar Sesión con Google (Gmail)
                 </button>
             </div>
 
-            <div style="background: var(--primary-light); color: var(--primary); padding: 12px 16px; border-radius: var(--radius-sm); font-size: 0.85rem; text-align: center; line-height: 1.4;">
-                <i class="fas fa-shield-alt"></i> Tu cuenta nos ayuda a prevenir spam y garantizar publicaciones verídicas para las mascotas.
+            <div style="background: var(--primary-light); color: var(--primary); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.82rem; text-align: center; line-height: 1.4;">
+                <i class="fas fa-shield-alt"></i> La administración te permite dar de alta rescatados, metas del refugio y gestionar la comunidad.
             </div>
         </div>
+    </div>
     </div>
 
     <!-- MODAL: CONFIGURACIÓN DE PERFIL DE USUARIO -->
@@ -381,52 +468,66 @@
         </div>
     </div>
 
-    <!-- FOOTER -->
+    <!-- MAIN FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <div class="logo-brand" style="margin-bottom: 15px;">
-                        <img src="assets/img/cropped_circle_image.png" alt="Logo Reserva Canina Gálvez" class="logo-img-circle">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
                         <div class="logo-title">
-                            <span class="logo-main-text" style="color: #fff;">RESERVA CANINA</span>
-                            <span class="logo-sub-text" style="color: #9eb1a3;">GÁLVEZ • SANTA FE</span>
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
                         </div>
                     </div>
-                    <p>Asociación sin fines de lucro dedicada a la protección, rescate y adopción de animales vulnerables en la ciudad de Gálvez, Santa Fe.</p>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
                 </div>
                 <div>
                     <h4 class="footer-title">Navegación</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="quienes-somos.html">Información</a></li>
-                        <li><a href="adopciones.html">Adopciones</a></li>
-                        <li><a href="refugio.html">Refugio</a></li>
+                        <li><a href="adopciones.html">Adopta</a></li>
+                        <li><a href="historias.html">Historias</a></li>
+                        <li><a href="final-feliz.html">Final Feliz</a></li>
+                        <li><a href="refugio.html">Necesidades</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Comunidad</h4>
                     <ul class="footer-links">
-                        <li><a href="leyes.html">Leyes</a></li>
-                        <li><a href="foro.html">Foro</a></li>
-                        <li><a href="donaciones.html">Donaciones</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
+                        <li><a href="cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="hacete-socio.html">Hacete Socio</a></li>
+                        <li><a href="cuidado-responsable.html#leyes">Leyes y Denuncias</a></li>
+                        <li><a href="foro.html">Perdidos y Encontrados</a></li>
+                        <li><a href="donaciones.html">Cómo aportar</a></li>
+                        <li><a href="quienes-somos.html#contacto">Contacto</a></li>
+                        </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Redes Sociales</h4>
-                    <p style="color: #9eb1a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Reserva Canina Gálvez. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <p style="margin: 0;">&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <div class="footer-admin-slot">
+                    <a href="#" onclick="openModal('login-modal'); return false;" class="footer-admin-link" style="color: #8FA58A; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-lock"></i> Acceso Exclusivo Administración
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Firebase App, Auth & Firestore SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 
     <!-- SCRIPTS -->
     <script src="js/firebase-config.js"></script>

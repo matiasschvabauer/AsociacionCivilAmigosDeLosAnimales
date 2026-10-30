@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script src="js/mobile-detect.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - Reserva Canina Gálvez</title>
-    <meta name="description" content="Contactate con la Reserva Canina de Gálvez para adopciones, visitas, donaciones o asesoramiento.">
+    <title>Contacto - Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Contactate con la Asociación Civil Amigos de los Animales No Humanos de Gálvez para adopciones, visitas, donaciones o consultas.">
     <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <meta http-equiv="refresh" content="0; url=quienes-somos.html#contacto">
+    <script>window.location.replace('quienes-somos.html#contacto');</script>
 </head>
 <body>
 
@@ -16,12 +19,11 @@
         <div class="container top-bar-content">
             <div class="top-bar-info">
                 <span><i class="fas fa-location-dot"></i> Gálvez, Santa Fe, Argentina</span>
-                <span><i class="fas fa-envelope"></i> Estamos para ayudarte</span>
             </div>
             <div class="top-bar-actions">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -30,25 +32,74 @@
     <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="container header-wrapper">
-            <a href="index.html" class="logo-brand">
-                <img src="assets/img/LogoReserva.png" alt="Reserva Canina Gálvez" class="logo-img-rectangular">
+            <a href="index.html" class="logo-brand" title="Asociación Civil Amigos de los Animales">
+                <img src="assets/img/logo_simbolo.png" alt="Asociación Civil Amigos de los Animales" class="logo-symbol-img">
+                <div class="logo-reveal-group">
+                    <span class="logo-divider-bar"></span>
+                    <div class="logo-text-details">
+                        <span class="logo-text-title">ASOCIACIÓN CIVIL AMIGOS</span>
+                        <span class="logo-text-subtitle">DE LOS ANIMALES NO HUMANOS</span>
+                        <span class="logo-text-num">Personería Jurídica Nº 1769</span>
+                    </div>
+                </div>
             </a>
 
             <nav class="nav-links">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="quienes-somos.html" class="nav-link">Información</a>
-                <a href="adopciones.html" class="nav-link">Adopciones</a>
-                <a href="refugio.html" class="nav-link">Refugio</a>
-                <a href="leyes.html" class="nav-link">Leyes</a>
-                <a href="foro.html" class="nav-link">Foro</a>
-                <a href="contacto.html" class="nav-link active">Contacto</a>
+                <a href="index.html" class="nav-link ">Inicio</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="quienes-somos.html" class="nav-link active">Información <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="quienes-somos.html#sobre-nosotros" class="dropdown-link"><i class="fas fa-landmark"></i> Quiénes Somos</a>
+                        <a href="quienes-somos.html#documentos-legales" class="dropdown-link"><i class="fas fa-file-contract"></i> Estatuto y Legal</a>
+                        <a href="quienes-somos.html#veterinarios" class="dropdown-link"><i class="fas fa-user-doctor"></i> Veterinarios</a>
+                        <a href="quienes-somos.html#faq" class="dropdown-link"><i class="fas fa-circle-question"></i> Preguntas Frecuentes</a>
+                        <a href="quienes-somos.html#contacto" class="dropdown-link"><i class="fas fa-envelope"></i> Contacto</a>
+                    </div>
+                </div>
+
+                <a href="adopciones.html" class="nav-link ">Adopta</a>
+                <a href="historias.html" class="nav-link ">Historias</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="final-feliz.html" class="nav-link ">Final Feliz <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="final-feliz.html#adopciones-exitosas" class="dropdown-link"><i class="fas fa-heart-circle-check"></i> Casos Adoptados</a>
+                        <a href="final-feliz.html#galeria-collage" class="dropdown-link"><i class="fas fa-images"></i> Galería y Collage</a>
+                    </div>
+                </div>
+
+                <div class="nav-item-dropdown">
+                    <a href="cuidado-responsable.html" class="nav-link ">Cuidado Responsable <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="cuidado-responsable.html#pautas-cuidado" class="dropdown-link"><i class="fas fa-shield-cat"></i> Guía y Consejos</a>
+                        <a href="cuidado-responsable.html#adopciones-felinas" class="dropdown-link"><i class="fas fa-cat"></i> Adopciones Felinas</a>
+                        <a href="cuidado-responsable.html#leyes" class="dropdown-link"><i class="fas fa-scale-balanced"></i> Leyes y Denuncias</a>
+                    </div>
+                </div>
+
+                <a href="hacete-socio.html" class="nav-link ">Hacete Socio</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="refugio.html" class="nav-link ">Necesidades <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="refugio.html#necesidades-hoy" class="dropdown-link"><i class="fas fa-bell"></i> Urgentes de Hoy</a>
+                        <a href="refugio.html#insumos-permanentes" class="dropdown-link"><i class="fas fa-boxes-packing"></i> Insumos Permanentes</a>
+                        <a href="refugio.html#voluntariado" class="dropdown-link"><i class="fas fa-hands-holding-circle"></i> Sumate al Equipo</a>
+                    </div>
+                </div>
+
+                <a href="foro.html" class="nav-link ">Perdidos y Encontrados</a>
             </nav>
 
-            <div class="header-right-actions" style="display: flex; align-items: center; gap: 10px;">
+            <div class="header-right-actions">
                 <div class="auth-status-container"></div>
-                <button class="theme-toggle-btn" id="theme-toggle"><i class="fas fa-moon"></i></button>
-                <a href="donaciones.html" class="btn btn-secondary btn-sm"><i class="fas fa-hand-holding-heart"></i> Donar</a>
-                <button class="mobile-menu-btn" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+                <a href="donaciones.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-heart"></i> Cómo aportar
+                </a>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -58,8 +109,12 @@
         <div class="mobile-nav-links">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="quienes-somos.html" class="nav-link">Información</a>
-            <a href="adopciones.html" class="nav-link">Adopciones</a>
-            <a href="refugio.html" class="nav-link">Refugio</a>
+            <a href="adopciones.html" class="nav-link">Adopta</a>
+            <a href="historias.html" class="nav-link">Historias</a>
+            <a href="final-feliz.html" class="nav-link">Final Feliz</a>
+            <a href="cuidado-responsable.html" class="nav-link">Cuidado Responsable</a>
+            <a href="hacete-socio.html" class="nav-link">Hacete Socio</a>
+            <a href="refugio.html" class="nav-link">Necesidades</a>
             <a href="leyes.html" class="nav-link">Leyes</a>
             <a href="foro.html" class="nav-link">Foro</a>
             <a href="contacto.html" class="nav-link active">Contacto</a>
@@ -70,7 +125,7 @@
     <section style="background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color:#fff; padding: 60px 0; text-align: center;">
         <div class="container">
             <span class="badge badge-secondary" style="margin-bottom: 12px;">Vías de Comunicación</span>
-            <h1 style="color:#fff; font-size: 2.5rem; margin-bottom: 10px;">Contactate con la Reserva</h1>
+            <h1 style="color:#fff; font-size: 2.5rem; margin-bottom: 10px;">Contactate con la Asociación</h1>
             <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Envianos tu mensaje, consulta sobre adopciones o coordiná una visita al refugio en Gálvez.</p>
         </div>
     </section>
@@ -78,7 +133,7 @@
     <!-- CONTACT CONTENT -->
     <section class="section-padding">
         <div class="container">
-            <div class="responsive-2col" style="align-items: start;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
                 
                 <!-- Contact Info -->
                 <div>
@@ -103,8 +158,8 @@
                                 <i class="fab fa-facebook-f"></i>
                             </div>
                             <div>
-                                <strong>Facebook Fan Page:</strong>
-                                <p><a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" style="color: var(--primary); font-weight: 600;">Reserva Canina Gálvez</a></p>
+                                <strong>Facebook:</strong>
+                                <p><a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" style="color: var(--primary); font-weight: 600;">Asociación Civil Amigos de los Animales No Humanos</a></p>
                             </div>
                         </div>
 
@@ -135,9 +190,10 @@
                         <div class="form-group">
                             <label class="form-label">Asunto:</label>
                             <select class="form-control">
-                                <option>Adopción de Perrito</option>
+                                <option>Adopción de Mascota</option>
                                 <option>Voluntariado / Tránsito</option>
                                 <option>Donación de Insumos</option>
+                                <option>Hacerme Socio</option>
                                 <option>Consulta General</option>
                             </select>
                         </div>
@@ -155,49 +211,53 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- MAIN FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <div class="logo-brand" style="margin-bottom: 15px;">
-                        <img src="assets/img/cropped_circle_image.png" alt="Logo Reserva Canina Gálvez" class="logo-img-circle">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
                         <div class="logo-title">
-                            <span class="logo-main-text" style="color: #fff;">RESERVA CANINA</span>
-                            <span class="logo-sub-text" style="color: #9eb1a3;">GÁLVEZ • SANTA FE</span>
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
                         </div>
                     </div>
-                    <p>Asociación sin fines de lucro dedicada a la protección, rescate y adopción de animales vulnerables en la ciudad de Gálvez, Santa Fe.</p>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
                 </div>
                 <div>
                     <h4 class="footer-title">Navegación</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="quienes-somos.html">Información</a></li>
-                        <li><a href="adopciones.html">Adopciones</a></li>
-                        <li><a href="refugio.html">Refugio</a></li>
+                        <li><a href="adopciones.html">Adopta</a></li>
+                        <li><a href="historias.html">Historias</a></li>
+                        <li><a href="final-feliz.html">Final Feliz</a></li>
+                        <li><a href="refugio.html">Necesidades</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Comunidad</h4>
                     <ul class="footer-links">
+                        <li><a href="cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="hacete-socio.html">Hacete Socio</a></li>
                         <li><a href="leyes.html">Leyes</a></li>
-                        <li><a href="foro.html">Foro</a></li>
-                        <li><a href="donaciones.html">Donaciones</a></li>
+                        <li><a href="foro.html">Foro Comunitario</a></li>
+                        <li><a href="donaciones.html">Cómo aportar</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Redes Sociales</h4>
-                    <p style="color: #9eb1a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Reserva Canina Gálvez. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <p>&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
             </div>
         </div>
     </footer>

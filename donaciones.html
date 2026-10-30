@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script src="js/mobile-detect.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donaciones - Reserva Canina Gálvez</title>
-    <meta name="description" content="Colaborá con la Reserva Canina de Gálvez mediante transferencia bancaria, Mercado Pago o insumos.">
+    <title>Donaciones - Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Colaborá con la Asociación Civil Amigos de los Animales No Humanos de Gálvez mediante transferencia bancaria, Mercado Pago o insumos.">
     <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -16,12 +17,11 @@
         <div class="container top-bar-content">
             <div class="top-bar-info">
                 <span><i class="fas fa-location-dot"></i> Gálvez, Santa Fe, Argentina</span>
-                <span><i class="fas fa-heart"></i> Tu Donación Salva Vidas</span>
             </div>
             <div class="top-bar-actions">
                 <div class="social-links">
-                    <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
@@ -30,25 +30,73 @@
     <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="container header-wrapper">
-            <a href="index.html" class="logo-brand">
-                <img src="assets/img/LogoReserva.png" alt="Reserva Canina Gálvez" class="logo-img-rectangular">
+            <a href="index.html" class="logo-brand" title="Asociación Civil Amigos de los Animales">
+                <img src="assets/img/logo_simbolo.png" alt="Asociación Civil Amigos de los Animales" class="logo-symbol-img">
+                <div class="logo-reveal-group">
+                    <span class="logo-divider-bar"></span>
+                    <div class="logo-text-details">
+                        <span class="logo-text-title">ASOCIACIÓN CIVIL AMIGOS</span>
+                        <span class="logo-text-subtitle">DE LOS ANIMALES NO HUMANOS</span>
+                        <span class="logo-text-num">Personería Jurídica Nº 1769</span>
+                    </div>
+                </div>
             </a>
 
             <nav class="nav-links">
-                <a href="index.html" class="nav-link">Inicio</a>
-                <a href="quienes-somos.html" class="nav-link">Información</a>
-                <a href="adopciones.html" class="nav-link">Adopciones</a>
-                <a href="refugio.html" class="nav-link">Refugio</a>
-                <a href="leyes.html" class="nav-link">Leyes</a>
-                <a href="foro.html" class="nav-link">Foro</a>
-                <a href="contacto.html" class="nav-link">Contacto</a>
+                <a href="index.html" class="nav-link ">Inicio</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="quienes-somos.html" class="nav-link ">Información <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="quienes-somos.html#sobre-nosotros" class="dropdown-link"><i class="fas fa-landmark"></i> Quiénes Somos</a>
+                        <a href="quienes-somos.html#documentos-legales" class="dropdown-link"><i class="fas fa-file-contract"></i> Estatuto y Legal</a>
+                        <a href="quienes-somos.html#veterinarios" class="dropdown-link"><i class="fas fa-user-doctor"></i> Veterinarios</a>
+                        <a href="quienes-somos.html#faq" class="dropdown-link"><i class="fas fa-circle-question"></i> Preguntas Frecuentes</a>
+                        <a href="quienes-somos.html#contacto" class="dropdown-link"><i class="fas fa-envelope"></i> Contacto</a>
+                    </div>
+                </div>
+
+                <a href="adopciones.html" class="nav-link ">Adopta</a>
+                <a href="historias.html" class="nav-link ">Historias</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="final-feliz.html" class="nav-link ">Final Feliz <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="final-feliz.html#adopciones-exitosas" class="dropdown-link"><i class="fas fa-heart-circle-check"></i> Casos Adoptados</a>
+                        <a href="final-feliz.html#galeria-collage" class="dropdown-link"><i class="fas fa-images"></i> Galería y Collage</a>
+                    </div>
+                </div>
+
+                <div class="nav-item-dropdown">
+                    <a href="cuidado-responsable.html" class="nav-link ">Cuidado Responsable <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="cuidado-responsable.html#pautas-cuidado" class="dropdown-link"><i class="fas fa-shield-cat"></i> Guía y Consejos</a>
+                        <a href="cuidado-responsable.html#adopciones-felinas" class="dropdown-link"><i class="fas fa-cat"></i> Adopciones Felinas</a>
+                        <a href="cuidado-responsable.html#leyes" class="dropdown-link"><i class="fas fa-scale-balanced"></i> Leyes y Denuncias</a>
+                    </div>
+                </div>
+
+                <a href="hacete-socio.html" class="nav-link ">Hacete Socio</a>
+
+                <div class="nav-item-dropdown">
+                    <a href="refugio.html" class="nav-link ">Necesidades <i class="fas fa-chevron-down nav-arrow"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="refugio.html#necesidades-hoy" class="dropdown-link"><i class="fas fa-bell"></i> Urgentes de Hoy</a>
+                        <a href="refugio.html#insumos-permanentes" class="dropdown-link"><i class="fas fa-boxes-packing"></i> Insumos Permanentes</a>
+                        <a href="refugio.html#voluntariado" class="dropdown-link"><i class="fas fa-hands-holding-circle"></i> Sumate al Equipo</a>
+                    </div>
+                </div>
+
+                <a href="foro.html" class="nav-link ">Perdidos y Encontrados</a>
             </nav>
 
-            <div class="header-right-actions" style="display: flex; align-items: center; gap: 10px;">
-                <div class="auth-status-container"></div>
-                <button class="theme-toggle-btn" id="theme-toggle"><i class="fas fa-moon"></i></button>
-                <a href="donaciones.html" class="btn btn-secondary btn-sm"><i class="fas fa-hand-holding-heart"></i> Donar</a>
-                <button class="mobile-menu-btn" id="mobile-menu-toggle"><i class="fas fa-bars"></i></button>
+            <div class="header-right-actions">
+                <a href="donaciones.html" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-heart"></i> Cómo aportar
+                </a>
+                <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Abrir menú">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -58,11 +106,16 @@
         <div class="mobile-nav-links">
             <a href="index.html" class="nav-link">Inicio</a>
             <a href="quienes-somos.html" class="nav-link">Información</a>
-            <a href="adopciones.html" class="nav-link">Adopciones</a>
-            <a href="refugio.html" class="nav-link">Refugio</a>
-            <a href="leyes.html" class="nav-link">Leyes</a>
-            <a href="foro.html" class="nav-link">Foro</a>
-            <a href="contacto.html" class="nav-link">Contacto</a>
+            <a href="adopciones.html" class="nav-link">Adopta</a>
+            <a href="historias.html" class="nav-link">Historias</a>
+            <a href="final-feliz.html" class="nav-link">Final Feliz</a>
+            <a href="cuidado-responsable.html" class="nav-link">Cuidado Responsable</a>
+            <a href="hacete-socio.html" class="nav-link">Hacete Socio</a>
+            <a href="refugio.html" class="nav-link">Necesidades</a>
+            <a href="foro.html" class="nav-link">Perdidos y Encontrados</a>
+            <a href="donaciones.html" class="btn btn-secondary" style="margin-top: 10px;">
+                <i class="fas fa-heart"></i> Cómo aportar
+            </a>
         </div>
     </div>
 
@@ -89,7 +142,7 @@
                     <div style="margin-bottom: 15px;">
                         <label style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">ALIAS:</label>
                         <div class="copy-box">
-                            <span class="copy-text">RESERVA.CANINA.GALVEZ</span>
+                            <span class="copy-text">alias.ejemplo</span>
                             <button class="btn btn-outline btn-sm" onclick="copyAlias()"><i class="fas fa-copy"></i> Copiar</button>
                         </div>
                     </div>
@@ -102,7 +155,7 @@
                         </div>
                     </div>
 
-                    <p style="font-size: 0.85rem; color: var(--text-light);"><strong>Titular:</strong> Reserva Canina Gálvez (Asociación Civil)</p>
+                    <p style="font-size: 0.85rem; color: var(--text-light);"><strong>Titular:</strong> Asociación Civil Amigos de los Animales No Humanos</p>
                 </div>
 
                 <!-- Mercado Pago Buttons -->
@@ -112,16 +165,16 @@
                     <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem;">Elegí el monto con el que deseás colaborar hoy:</p>
 
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px;">
-                        <button class="btn btn-outline" onclick="donateMercadoPago(1000)">$1.000</button>
-                        <button class="btn btn-outline" onclick="donateMercadoPago(3000)">$3.000</button>
-                        <button class="btn btn-outline" onclick="donateMercadoPago(5000)">$5.000</button>
-                        <button class="btn btn-secondary" onclick="donateMercadoPago(10000)">$10.000</button>
+                        <button class="btn btn-outline" onclick="selectQuickDonation(5000)">$5.000</button>
+                        <button class="btn btn-outline" onclick="selectQuickDonation(10000)">$10.000</button>
+                        <button class="btn btn-outline" onclick="selectQuickDonation(20000)">$20.000</button>
+                        <button class="btn btn-secondary" onclick="selectQuickDonation(50000)">$50.000</button>
                     </div>
 
                     <!-- Impact Calculator -->
                     <div style="background: var(--bg-body); padding: 18px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
                         <label class="form-label" style="margin-bottom: 8px;">Calculá el impacto de tu aporte libre ($):</label>
-                        <input type="number" id="custom-donation-amount" class="form-control" placeholder="Ej: 4000" style="margin-bottom: 10px;">
+                        <input type="number" id="custom-donation-amount" class="form-control" placeholder="Ej: 15000" style="margin-bottom: 10px;">
                         <div id="donation-impact-text" style="font-weight: 600; color: var(--primary); font-size: 0.9rem; min-height: 24px;">
                             🌱 ¡Ingresá un monto para ver a qué equivale!
                         </div>
@@ -129,150 +182,159 @@
                 </div>
 
             </div>
+        </div>
+    </section>
 
-            <!-- ACTIVE GOALS IN DONATIONS PAGE -->
-            <div style="margin-top: 50px;">
-                <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; margin-bottom: 25px;">
-                    <div>
-                        <span class="badge badge-primary" style="margin-bottom: 8px;">Objetivos Activos</span>
-                        <h2 class="section-title" style="margin-bottom: 5px;">🎯 Metas y Proyectos a Financiar</h2>
-                        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Cada aporte va directo a estas metas transparentes del refugio.</p>
-                    </div>
-                    <div id="admin-goals-action-container"></div>
-                </div>
-
-                <div id="refugio-goals-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px;">
-                    <!-- Rendered dynamically by js/refugio.js -->
-                </div>
-
-                <!-- FLOATING DONORS SHOWCASE ON PAGE -->
-                <div style="margin-top: 40px; background: var(--bg-body); border-radius: var(--radius-lg); border: 1px solid var(--border-color); padding: 25px;">
-                    <h3 style="font-size: 1.2rem; color: var(--text-main); margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
-                        <i class="fas fa-heart" style="color: #e53935;"></i> Red Flotante de Vecinos Donantes
-                    </h3>
-                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">
-                        Mensajes y aportes en tiempo real de vecinos que colaboran con nuestras metas del refugio en Gálvez:
+    <!-- BENEFICIOS SOLIDARIOS Y RECICLAJE SECTION -->
+    <section class="section-padding" id="beneficios-reciclaje" style="background: var(--bg-body); padding-bottom: 95px; border-top: 1px solid var(--border-color);">
+        <div class="container">
+                <div style="text-align: center; max-width: 740px; margin: 0 auto 35px auto;">
+                    <span class="badge badge-primary" style="margin-bottom: 10px;">Acciones Solidarias y Sustentables</span>
+                    <h2 class="section-title">Eventos a Beneficio y Reciclaje</h2>
+                    <p class="section-subtitle">
+                        Además de los aportes monetarios, realizamos campañas y eventos continuos en Gálvez. ¡Cada material reciclable o prenda donada se convierte en alimento y medicación para nuestros rescatados!
                     </p>
-                    <div id="page-floating-donors-container" class="floating-donors-container">
-                        <!-- Dynamically rendered floating donor cards -->
-                    </div>
                 </div>
-            </div>
 
+                <div class="benefits-grid" style="margin-bottom: 55px;">
+
+                    <!-- BENEFICIO 1: RECOLECCIÓN DE CARTÓN -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon-wrap" style="background: var(--primary-light); color: var(--primary);">
+                            <i class="fas fa-boxes-stacked"></i>
+                        </div>
+                        <span class="badge badge-primary" style="align-self: flex-start; margin-bottom: 8px;">Campaña Permanente</span>
+                        <h3 class="benefit-card-title">Recolección de Cartón</h3>
+                        
+                        <div style="margin-bottom: 14px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+                            <strong><i class="fas fa-location-dot" style="color: var(--secondary);"></i> Dónde y Cuándo:</strong>
+                            <p style="margin: 4px 0 0 0;">Acopio permanente en puntos designados de Gálvez y jornadas especiales de recolección informadas en nuestras redes sociales.</p>
+                        </div>
+
+                        <div style="margin-bottom: 14px;">
+                            <strong style="font-size: 0.92rem; color: var(--text-main);"><i class="fas fa-circle-check" style="color: #2e7d32;"></i> Qué se Acepta:</strong>
+                            <ul class="benefit-checklist">
+                                <li><i class="fas fa-check"></i> Cajas de cartón corrugado limpias y secas.</li>
+                                <li><i class="fas fa-check"></i> <span><strong>Importante:</strong> Entregar las cajas desarmadas y dobladas para optimizar espacio.</span></li>
+                                <li><i class="fas fa-check"></i> Revistas, cuadernos usados, papel blanco y carpetas de cartulina.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #fff3e0; border-left: 3px solid #ff9800; padding: 10px 14px; border-radius: 6px; font-size: 0.85rem; color: #b78103; margin-top: auto;">
+                            <strong>No se acepta:</strong> Cartón mojado, con grasa, restos de comida o cajas de pizza con aceite.
+                        </div>
+                    </div>
+
+                    <!-- BENEFICIO 2: FERIA AMERICANA SOLIDARIA -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon-wrap" style="background: var(--secondary-light); color: var(--secondary);">
+                            <i class="fas fa-shirt"></i>
+                        </div>
+                        <span class="badge badge-secondary" style="align-self: flex-start; margin-bottom: 8px;">Evento Solidario</span>
+                        <h3 class="benefit-card-title">Feria Americana Solidaria</h3>
+
+                        <div style="margin-bottom: 14px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+                            <strong><i class="fas fa-calendar-alt" style="color: var(--secondary);"></i> Dónde y Cuándo:</strong>
+                            <p style="margin: 4px 0 0 0;">Se realiza en fechas especiales de fines de semana en espacios públicos de la ciudad de Gálvez. ¡Anunciamos cada edición en Instagram y Facebook!</p>
+                        </div>
+
+                        <div style="margin-bottom: 14px;">
+                            <strong style="font-size: 0.92rem; color: var(--text-main);"><i class="fas fa-circle-check" style="color: #2e7d32;"></i> Qué se Acepta:</strong>
+                            <ul class="benefit-checklist">
+                                <li><i class="fas fa-check"></i> Ropa de hombre, mujer y niños limpia y en excelente estado.</li>
+                                <li><i class="fas fa-check"></i> Calzado en pares, carteras, mochilas y accesorios.</li>
+                                <li><i class="fas fa-check"></i> Artículos de bazar, vajilla, adornos para el hogar, libros y juguetes sanos.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: var(--primary-light); border-left: 3px solid var(--primary); padding: 10px 14px; border-radius: 6px; font-size: 0.85rem; color: var(--primary); margin-top: auto;">
+                            <strong>Impacto:</strong> Permite a los vecinos acceder a ropa accesible y el 100% de la venta va a tratamientos veterinarios.
+                        </div>
+                    </div>
+
+                    <!-- BENEFICIO 3: RECOLECCIÓN DE ALUMINIO -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon-wrap" style="background: var(--accent-light); color: var(--primary);">
+                            <i class="fas fa-recycle"></i>
+                        </div>
+                        <span class="badge badge-primary" style="align-self: flex-start; margin-bottom: 8px;">Campaña Permanente</span>
+                        <h3 class="benefit-card-title">Recolección de Aluminio</h3>
+
+                        <div style="margin-bottom: 14px; font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+                            <strong><i class="fas fa-location-dot" style="color: var(--secondary);"></i> Dónde y Cuándo:</strong>
+                            <p style="margin: 4px 0 0 0;">Podés acercar tus latas en bolsas a los comercios amigos colaboradores y puntos verdes de la ciudad en cualquier momento del año.</p>
+                        </div>
+
+                        <div style="margin-bottom: 14px;">
+                            <strong style="font-size: 0.92rem; color: var(--text-main);"><i class="fas fa-circle-check" style="color: #2e7d32;"></i> Qué se Acepta:</strong>
+                            <ul class="benefit-checklist">
+                                <li><i class="fas fa-check"></i> Latas de gaseosa, cerveza, energizantes y aguas saborizadas (aluminio puro).</li>
+                                <li><i class="fas fa-check"></i> <span><strong>Importante:</strong> Entregarlas aplastadas/compactadas para optimizar el volumen de acopio.</span></li>
+                                <li><i class="fas fa-check"></i> Limpias y sin líquidos en su interior.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: #e8f5e9; border-left: 3px solid #2e7d32; padding: 10px 14px; border-radius: 6px; font-size: 0.85rem; color: #1b5e20; margin-top: auto;">
+                            <strong>Destino directo:</strong> El aluminio se canjea por fondos que cubren castraciones masivas y medicación de emergencia.
+                        </div>
+                    </div>
+
+                </div>
         </div>
-    <!-- MODAL: DONATE / COLLABORATE WITH SPECIFIC GOAL -->
-    <div class="modal-overlay" id="goal-donate-modal">
-        <div class="modal-container" style="max-width: 680px;">
-            <button class="modal-close-btn" onclick="closeModal('goal-donate-modal')"><i class="fas fa-times"></i></button>
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                <span class="badge badge-secondary" id="donate-modal-goal-category">Meta de Obra</span>
-                <span style="font-size: 0.85rem; color: var(--text-muted);" id="donate-modal-goal-status">En progreso</span>
-            </div>
-            <h2 id="donate-modal-goal-title" style="font-size: 1.5rem; margin-bottom: 10px;">Colaborar con esta Meta</h2>
-            
-            <!-- Progress Bar -->
-            <div style="background: rgba(0,0,0,0.06); border-radius: 20px; height: 12px; overflow: hidden; margin-bottom: 10px;">
-                <div id="donate-modal-goal-bar" style="background: linear-gradient(90deg, var(--primary), var(--secondary)); height: 100%; width: 0%; transition: width 0.6s ease;"></div>
-            </div>
-            <div style="display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 700; margin-bottom: 20px;">
-                <span style="color: var(--primary);" id="donate-modal-goal-current">$0 recaudados</span>
-                <span style="color: var(--text-muted);" id="donate-modal-goal-target">Objetivo: $0</span>
-            </div>
+    </section>
 
-            <!-- Payment Details Box -->
-            <div style="background: var(--bg-body); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; margin-bottom: 20px;">
-                <h4 style="font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; color: var(--primary);">
-                    <i class="fas fa-university"></i> Datos Bancarios para Donación Directa
-                </h4>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.88rem;">
-                    <div><strong>Alias MercadoPago:</strong> <code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px;">reserva.canina.galvez</code></div>
-                    <div><strong>CBU:</strong> <code style="background: rgba(0,0,0,0.06); padding: 2px 6px; border-radius: 4px;">0000003100049281749201</code></div>
-                    <div><strong>Titular:</strong> Reserva Canina Gálvez</div>
-                    <div><strong>Banco:</strong> Banco de Santa Fe</div>
-                </div>
-            </div>
-
-            <!-- Contribution Registration & Comment Form -->
-            <form onsubmit="handleGoalDonationSubmit(event)" style="margin-bottom: 25px;">
-                <input type="hidden" id="donate-modal-goal-id">
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                    <div class="form-group">
-                        <label class="form-label">Monto Aportado ($ ARS) <span style="color:red;">*</span>:</label>
-                        <input type="number" id="donate-amount-input" class="form-control" placeholder="Ej: 1000" min="1" required>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Tu Nombre / Pseudónimo:</label>
-                        <input type="text" id="donate-name-input" class="form-control" placeholder="Ej: Familia Pérez">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Mensaje de Apoyo Comunitario (Opcional):</label>
-                    <input type="text" id="donate-comment-input" class="form-control" placeholder="Ej: ¡Mucho amor y fuerza para los perritos de Gálvez! ❤️">
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    <i class="fas fa-heart"></i> Registrar Colaboración y Sumar al Objetivo
-                </button>
-            </form>
-
-            <!-- Floating Donor Showcase Title -->
-            <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 5px; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-comments" style="color: var(--secondary);"></i> Red Flotante de Vecinos Donantes
-            </h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">Comentarios en tiempo real de quienes colaboran con esta meta:</p>
-
-            <!-- Floating Donors Container -->
-            <div id="goal-floating-donors-container" class="floating-donors-container">
-                <!-- Dynamically rendered floating cards -->
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
+    <!-- MAIN FOOTER -->
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-about">
-                    <div class="logo-brand" style="margin-bottom: 15px;">
-                        <img src="assets/img/cropped_circle_image.png" alt="Logo Reserva Canina Gálvez" class="logo-img-circle">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
                         <div class="logo-title">
-                            <span class="logo-main-text" style="color: #fff;">RESERVA CANINA</span>
-                            <span class="logo-sub-text" style="color: #9eb1a3;">GÁLVEZ • SANTA FE</span>
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
                         </div>
                     </div>
-                    <p>Asociación sin fines de lucro dedicada a la protección, rescate y adopción de animales vulnerables en la ciudad de Gálvez, Santa Fe.</p>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
                 </div>
                 <div>
                     <h4 class="footer-title">Navegación</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Inicio</a></li>
                         <li><a href="quienes-somos.html">Información</a></li>
-                        <li><a href="adopciones.html">Adopciones</a></li>
-                        <li><a href="refugio.html">Refugio</a></li>
+                        <li><a href="adopciones.html">Adopta</a></li>
+                        <li><a href="historias.html">Historias</a></li>
+                        <li><a href="final-feliz.html">Final Feliz</a></li>
+                        <li><a href="refugio.html">Necesidades</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Comunidad</h4>
                     <ul class="footer-links">
-                        <li><a href="leyes.html">Leyes</a></li>
-                        <li><a href="foro.html">Foro</a></li>
-                        <li><a href="donaciones.html">Donaciones</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                    </ul>
+                        <li><a href="cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="hacete-socio.html">Hacete Socio</a></li>
+                        <li><a href="cuidado-responsable.html#leyes">Leyes y Denuncias</a></li>
+                        <li><a href="foro.html">Perdidos y Encontrados</a></li>
+                        <li><a href="donaciones.html">Cómo aportar</a></li>
+                        <li><a href="quienes-somos.html#contacto">Contacto</a></li>
+                        </ul>
                 </div>
                 <div>
                     <h4 class="footer-title">Redes Sociales</h4>
-                    <p style="color: #9eb1a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Reserva Canina Gálvez. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <p style="margin: 0;">&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <div class="footer-admin-slot">
+                    <a href="#" onclick="openModal('login-modal'); return false;" class="footer-admin-link" style="color: #8FA58A; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-lock"></i> Acceso Exclusivo Administración
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
@@ -287,6 +349,5 @@
     <script src="js/admin-bar.js"></script>
     <script src="js/main.js"></script>
     <script src="js/donaciones.js"></script>
-    <script src="js/refugio.js"></script>
 </body>
 </html>

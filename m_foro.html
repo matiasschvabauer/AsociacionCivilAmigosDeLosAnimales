@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="js/mobile-detect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Foro - Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Espacio de encuentro vecinal en Gálvez para publicar animales perdidos/encontrados, consultas y pedidos de ayuda. Asociación Civil Amigos de los Animales No Humanos.">
+    <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-styles.css">
+
+    <!-- Firebase SDK (Compat Version) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="m-body">
+
+        <!-- ─── HEADER MÓVIL SUPERIOR ─── -->
+    <header class="m-header">
+        <div class="m-header-top">
+            <a href="m_index.html" class="m-logo-link">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="m-logo-badge">
+                <div class="m-logo-text">
+                    <span class="m-logo-main">ASOCIACIÓN CIVIL</span>
+                    <span class="m-logo-sub">AMIGOS DE LOS ANIMALES</span>
+                </div>
+            </a>
+
+            <div class="m-header-actions">
+                <a href="https://wa.me/5493404521246" target="_blank" class="m-header-btn m-btn-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="m_donaciones.html" class="m-btn-pill-donar"><i class="fas fa-heart"></i> Aportar</a>
+                <button type="button" onclick="toggleMobileDrawer(true)" class="m-header-btn" title="Menú"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── DRAWER MENÚ LATERAL MÓVIL ─── -->
+    <div id="m-overlay" class="m-overlay"></div>
+    <aside id="m-drawer" class="m-drawer">
+        <div class="m-drawer-header">
+            <div class="m-drawer-header-brand">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación">
+                <span class="m-drawer-header-title">MENÚ PRINCIPAL</span>
+            </div>
+            <button type="button" onclick="toggleMobileDrawer(false)" class="m-drawer-close" aria-label="Cerrar Menú">&times;</button>
+        </div>
+
+        <div class="m-drawer-body">
+            <ul class="m-drawer-menu">
+                <li class="m-drawer-item"><a href="m_index.html" class="m-drawer-link "><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="m-drawer-item">
+                    <a href="m_quienes-somos.html" class="m-drawer-link "><i class="fas fa-info-circle"></i> Información</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_quienes-somos.html#sobre-nosotros" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Quiénes Somos</a></li>
+                        <li><a href="m_quienes-somos.html#documentos-legales" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Estatuto y Legal</a></li>
+                        <li><a href="m_quienes-somos.html#veterinarios" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Veterinarios</a></li>
+                        <li><a href="m_quienes-somos.html#faq" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                        <li><a href="m_quienes-somos.html#contacto" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_adopciones.html" class="m-drawer-link "><i class="fas fa-paw"></i> Adopta</a></li>
+                <li class="m-drawer-item"><a href="m_historias.html" class="m-drawer-link "><i class="fas fa-book-open"></i> Historias</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_final-feliz.html" class="m-drawer-link "><i class="fas fa-heart"></i> Final Feliz</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_final-feliz.html#adopciones-exitosas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Casos Adoptados</a></li>
+                        <li><a href="m_final-feliz.html#galeria-collage" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Galería y Collage</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item">
+                    <a href="m_cuidado-responsable.html" class="m-drawer-link "><i class="fas fa-shield-cat"></i> Cuidado Responsable</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_cuidado-responsable.html#pautas-cuidado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Guía y Consejos</a></li>
+                        <li><a href="m_cuidado-responsable.html#adopciones-felinas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Adopciones Felinas</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Leyes y Denuncias</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_hacete-socio.html" class="m-drawer-link "><i class="fas fa-id-card"></i> Hacete Socio</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_refugio.html" class="m-drawer-link "><i class="fas fa-hand-holding-heart"></i> Necesidades</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_refugio.html#necesidades-hoy" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Urgentes de Hoy</a></li>
+                        <li><a href="m_refugio.html#insumos-permanentes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Insumos Permanentes</a></li>
+                        <li><a href="m_refugio.html#voluntariado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Sumate al Equipo</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_foro.html" class="m-drawer-link active"><i class="fas fa-bullhorn"></i> Perdidos y Encontrados</a></li>
+                <li class="m-drawer-item"><a href="m_donaciones.html" class="m-drawer-link m-drawer-highlight "><i class="fas fa-hand-holding-dollar"></i> Cómo aportar</a></li>
+            </ul>
+        </div>
+
+        <div class="m-drawer-footer">
+            <button type="button" class="m-drawer-admin-btn" onclick="openModal('login-modal'); toggleMobileDrawer(false);">
+                <i class="fas fa-user-shield"></i> Acceso Administración
+            </button>
+            <div class="m-drawer-socials">
+                <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5493404521246" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </aside>
+<!-- PAGE HERO -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color:#fff; padding: 50px 0; text-align: center;">
+        <div class="container">
+            <span class="badge badge-secondary" style="margin-bottom: 12px;">Comunidad Gálvez</span>
+            <h1 style="color:#fff; font-size: 2.3rem; margin-bottom: 8px;">Perdidos y Encontrados</h1>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Espacio comunitario para reportar mascotas perdidas, rescatadas en la vía pública o que necesitan tránsito urgente en Gálvez.</p>
+        </div>
+    </section>
+
+    <!-- FORUM SECTION -->
+    <section class="section-padding">
+        <div class="container">
+            
+            <!-- Statistics Bar -->
+            <div class="forum-stats-grid">
+                <div class="forum-stat-card">
+                    <div class="forum-stat-icon"><i class="fas fa-bullhorn"></i></div>
+                    <div>
+                        <div class="forum-stat-number" id="stat-total-threads">0</div>
+                        <div class="forum-stat-label">Avisos Activos</div>
+                    </div>
+                </div>
+                <div class="forum-stat-card">
+                    <div class="forum-stat-icon" style="background: #e8f5e9; color: #2e7d32;"><i class="fas fa-check-circle"></i></div>
+                    <div>
+                        <div class="forum-stat-number" id="stat-solved-cases">0</div>
+                        <div class="forum-stat-label">Reencuentros</div>
+                    </div>
+                </div>
+                <div class="forum-stat-card">
+                    <div class="forum-stat-icon" style="background: #e0f2f1; color: #00695c;"><i class="fas fa-reply-all"></i></div>
+                    <div>
+                        <div class="forum-stat-number" id="stat-total-replies">0</div>
+                        <div class="forum-stat-label">Comentarios</div>
+                    </div>
+                </div>
+                <div class="forum-stat-card">
+                    <div class="forum-stat-icon" style="background: #fff3e0; color: #e65100;"><i class="fas fa-users"></i></div>
+                    <div>
+                        <div class="forum-stat-number" id="stat-active-users">0</div>
+                        <div class="forum-stat-label">Vecinos Conectados</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Header Actions Box -->
+            <div class="forum-header-box">
+                <div>
+                    <h2>Avisos de Búsqueda y Ayuda Comunitaria</h2>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Comunidad solidaria de Gálvez. Publicá, ayudá y respondé en tiempo real.</p>
+                </div>
+                <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+                    <div class="auth-status-container"></div>
+                    <button class="btn btn-primary" onclick="handleCreateThreadClick()">
+                        <i class="fas fa-plus-circle"></i> Publicar Aviso / Alerta
+                    </button>
+                </div>
+            </div>
+
+            <!-- Search and Sort Toolbar -->
+            <div class="forum-toolbar">
+                <div class="forum-search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="forum-search-input" placeholder="Buscar por palabra clave, título, barrio de Gálvez o autor..." oninput="handleForumSearch()">
+                </div>
+                <div class="forum-sort-box">
+                    <label for="forum-sort-select" style="font-size: 0.85rem; color: var(--text-muted); font-weight: 600;">Ordenar por:</label>
+                    <select id="forum-sort-select" onchange="handleForumSort()">
+                        <option value="recent">⏱️ Más Recientes</option>
+                        <option value="popular">❤️ Más Votados (Me Gusta)</option>
+                        <option value="replies">💬 Más Comentados</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Categories Bar -->
+            <div class="forum-categories">
+                <button class="cat-btn active" data-cat="all" onclick="filterCategory('all', this)">
+                    <span>Todas las Categorías</span>
+                    <span class="cat-badge-count" id="cat-count-all">0</span>
+                </button>
+                <button class="cat-btn" data-cat="perdidos" onclick="filterCategory('perdidos', this)">
+                    <span>🚨 Mascotas Perdidas</span>
+                    <span class="cat-badge-count" id="cat-count-perdidos">0</span>
+                </button>
+                <button class="cat-btn" data-cat="salud" onclick="filterCategory('salud', this)">
+                    <span>🩺 Consultas Médicas</span>
+                    <span class="cat-badge-count" id="cat-count-salud">0</span>
+                </button>
+                <button class="cat-btn" data-cat="ayuda" onclick="filterCategory('ayuda', this)">
+                    <span>🆘 Pedidos de Ayuda</span>
+                    <span class="cat-badge-count" id="cat-count-ayuda">0</span>
+                </button>
+                <button class="cat-btn" data-cat="general" onclick="filterCategory('general', this)">
+                    <span>💬 General</span>
+                    <span class="cat-badge-count" id="cat-count-general">0</span>
+                </button>
+            </div>
+
+            <!-- Thread List -->
+            <div class="thread-list" id="forum-threads-list">
+                <div class="logo-loader-box">
+                    <div class="logo-loader-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 326" class="logo-loader-svg" aria-label="Cargando">
+                            <path class="logo-loader-path" d="M 257 1 L 254 2 L 252 4 L 251 6 L 250 8 L 246 17 L 240 33 L 232 48 L 229 55 L 227 60 L 227 66 L 231 70 L 237 70 L 241 66 L 243 61 L 245 57 L 247 50 L 255 32 L 256 30 L 259 27 L 262 30 L 264 35 L 269 43 L 270 47 L 280 66 L 282 68 L 284 69 L 381 69 L 383 68 L 385 66 L 387 62 L 390 56 L 395 43 L 401 32 L 404 30 L 405 32 L 406 34 L 411 46 L 412 51 L 415 56 L 418 65 L 419 69 L 420 76 L 420 106 L 419 140 L 416 143 L 413 144 L 408 145 L 389 149 L 382 151 L 375 153 L 372 154 L 370 155 L 367 158 L 367 160 L 368 162 L 371 163 L 374 163 L 383 160 L 390 158 L 409 154 L 413 152 L 417 153 L 417 160 L 416 166 L 414 168 L 412 169 L 394 169 L 381 170 L 374 171 L 371 172 L 369 173 L 368 175 L 368 178 L 369 180 L 374 181 L 382 179 L 394 178 L 407 177 L 411 177 L 413 179 L 412 182 L 411 185 L 408 192 L 407 194 L 406 196 L 404 199 L 402 202 L 399 206 L 393 212 L 387 217 L 384 219 L 380 221 L 374 224 L 369 226 L 365 227 L 357 229 L 351 230 L 341 231 L 329 231 L 312 230 L 304 229 L 298 228 L 293 227 L 284 224 L 277 221 L 272 218 L 269 216 L 265 213 L 256 204 L 253 200 L 251 197 L 249 194 L 248 192 L 247 190 L 245 185 L 241 173 L 240 166 L 239 163 L 237 158 L 231 146 L 229 143 L 226 139 L 223 135 L 212 124 L 208 121 L 204 118 L 199 115 L 194 112 L 192 111 L 190 110 L 185 108 L 176 105 L 172 104 L 168 103 L 161 102 L 142 102 L 135 103 L 130 104 L 126 105 L 119 107 L 114 109 L 102 115 L 97 118 L 93 121 L 89 124 L 79 134 L 75 139 L 73 142 L 71 145 L 66 154 L 64 159 L 61 169 L 60 171 L 55 176 L 41 189 L 31 200 L 22 212 L 20 215 L 18 218 L 15 223 L 12 228 L 10 232 L 7 238 L 3 250 L 2 255 L 1 263 L 1 268 L 2 277 L 3 280 L 4 283 L 5 285 L 6 287 L 8 290 L 16 298 L 19 300 L 21 301 L 23 302 L 28 304 L 32 305 L 38 306 L 54 306 L 61 313 L 64 315 L 72 319 L 75 320 L 80 321 L 88 322 L 188 322 L 191 319 L 191 312 L 188 309 L 186 308 L 174 308 L 93 309 L 85 308 L 81 307 L 78 306 L 70 302 L 62 294 L 60 291 L 59 289 L 58 287 L 57 284 L 56 280 L 55 274 L 56 268 L 57 264 L 60 258 L 66 250 L 67 248 L 68 246 L 69 243 L 70 239 L 71 223 L 71 192 L 72 184 L 73 178 L 74 173 L 75 170 L 76 167 L 78 162 L 81 156 L 87 147 L 102 132 L 105 130 L 110 127 L 118 123 L 123 121 L 126 120 L 133 118 L 138 117 L 147 116 L 156 116 L 165 117 L 170 118 L 174 119 L 177 120 L 182 122 L 186 125 L 188 125 L 190 126 L 199 132 L 204 136 L 210 142 L 215 148 L 218 152 L 221 157 L 222 159 L 223 161 L 225 166 L 228 179 L 232 191 L 238 203 L 244 212 L 255 223 L 259 226 L 262 228 L 265 230 L 279 237 L 288 240 L 292 241 L 296 242 L 302 243 L 310 244 L 326 245 L 348 245 L 356 244 L 361 243 L 365 242 L 375 239 L 380 237 L 384 235 L 390 232 L 393 230 L 396 228 L 401 224 L 411 214 L 414 210 L 416 207 L 418 204 L 420 200 L 423 194 L 427 179 L 429 177 L 431 176 L 434 176 L 457 177 L 465 178 L 469 179 L 477 182 L 483 181 L 484 179 L 484 177 L 483 175 L 481 173 L 478 172 L 474 171 L 470 170 L 464 169 L 452 168 L 432 168 L 430 166 L 430 162 L 431 154 L 432 150 L 434 148 L 438 147 L 445 146 L 455 145 L 473 146 L 479 146 L 481 145 L 482 143 L 482 140 L 479 137 L 474 136 L 453 136 L 445 137 L 439 138 L 438 139 L 433 138 L 433 112 L 435 96 L 434 74 L 433 68 L 432 63 L 431 59 L 430 56 L 427 48 L 420 30 L 414 15 L 411 8 L 410 6 L 406 2 L 400 2 L 397 5 L 394 11 L 390 20 L 383 34 L 378 47 L 375 53 L 372 55 L 315 55 L 304 54 L 296 55 L 293 55 L 291 54 L 289 52 L 285 45 L 277 30 L 265 5 L 262 2 L 260 1 Z M 57 198 L 57 203 L 56 237 L 55 240 L 54 242 L 48 250 L 45 256 L 44 259 L 43 262 L 42 266 L 42 282 L 44 287 L 43 291 L 38 291 L 34 290 L 29 288 L 26 286 L 20 280 L 19 278 L 18 276 L 17 273 L 16 266 L 17 259 L 20 248 L 21 245 L 27 233 L 30 228 L 32 225 L 41 213 L 46 208 L 50 202 L 53 200 Z" fill="currentColor" fill-rule="evenodd" />
+                            <path class="logo-loader-detail" d="M 148 228 L 144 229 L 141 231 L 139 234 L 138 237 L 138 240 L 139 243 L 140 245 L 141 247 L 145 254 L 147 256 L 147 257 L 148 258 L 150 259 L 152 260 L 159 260 L 161 259 L 164 256 L 168 249 L 172 241 L 172 237 L 171 234 L 169 232 L 169 231 L 168 230 L 166 229 L 161 228 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 190 200 L 188 201 L 185 204 L 184 206 L 184 211 L 185 213 L 188 216 L 190 217 L 195 217 L 197 216 L 200 213 L 201 211 L 201 206 L 200 204 L 197 201 L 195 200 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 115 200 L 113 201 L 110 204 L 109 206 L 109 211 L 110 213 L 113 216 L 116 217 L 120 217 L 122 216 L 125 213 L 126 211 L 126 206 L 125 204 L 122 201 L 120 200 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 321 149 L 319 150 L 317 151 L 316 152 L 315 154 L 314 156 L 314 162 L 315 165 L 320 174 L 322 177 L 324 179 L 326 180 L 328 181 L 333 181 L 335 180 L 340 175 L 343 170 L 347 162 L 347 156 L 346 154 L 344 151 L 342 150 L 340 149 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 364 121 L 360 125 L 360 133 L 363 136 L 365 137 L 370 137 L 374 135 L 374 134 L 376 132 L 376 126 L 374 124 L 374 123 L 373 122 L 371 121 Z" fill="currentColor" />
+                            <path class="logo-loader-detail" d="M 289 121 L 285 125 L 284 129 L 285 133 L 288 136 L 290 137 L 296 137 L 298 136 L 300 134 L 301 132 L 301 126 L 300 124 L 297 121 Z" fill="currentColor" />
+                        </svg>
+                    </div>
+                    <div class="logo-loader-text">
+                        Cargando avisos de Perdidos y Encontrados...
+                        <span class="logo-loader-dots"><span>.</span><span>.</span><span>.</span></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+        <!-- MODAL: LOGIN / AUTH & ADMIN -->
+    <div class="modal-overlay" id="login-modal">
+        <div class="modal-container" style="max-width: 490px;">
+            <button class="modal-close-btn" onclick="closeModal('login-modal')"><i class="fas fa-times"></i></button>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="width:68px; height:68px; margin: 0 auto 12px auto;">
+                <h2 style="color: var(--primary); font-size: 1.4rem; margin-bottom: 6px;">Acceso y Administración</h2>
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.4; margin: 0;">Podés ingresar con rol de Administrador para pruebas o iniciar sesión con Google.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px;">
+                <button class="btn btn-secondary" onclick="loginAsTemporaryAdmin()" style="width: 100%; padding: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.98rem; background: #C96545; color: white; border: none; cursor: pointer; border-radius: var(--radius-sm); box-shadow: var(--shadow-sm);">
+                    <i class="fas fa-crown" style="color: #ffd166;"></i> Ingresar como Administrador (Modo Pruebas)
+                </button>
+                <p style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin: -4px 0 6px 0;">
+                    <i class="fas fa-bolt" style="color: #C96545;"></i> Acceso instantáneo para agregar mascotas en Adopta, metas en Refugio, subir fotos y moderar localmente.
+                </p>
+
+                <div style="display: flex; align-items: center; gap: 10px; margin: 4px 0;">
+                    <span style="flex: 1; height: 1px; background: var(--border-color);"></span>
+                    <span style="font-size: 0.76rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase;">O verificación comunitaria</span>
+                    <span style="flex: 1; height: 1px; background: var(--border-color);"></span>
+                </div>
+
+                <button class="btn" onclick="loginWithGoogle()" style="width: 100%; background: #ffffff; color: #444; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); padding: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 0.92rem; border-radius: var(--radius-sm);">
+                    <i class="fab fa-google" style="color: #ea4335; font-size: 1.15rem;"></i> Iniciar Sesión con Google (Gmail)
+                </button>
+            </div>
+
+            <div style="background: var(--primary-light); color: var(--primary); padding: 10px 14px; border-radius: var(--radius-sm); font-size: 0.82rem; text-align: center; line-height: 1.4;">
+                <i class="fas fa-shield-alt"></i> La administración te permite dar de alta rescatados, metas del refugio y gestionar la comunidad.
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- MODAL: CONFIGURACIÓN DE PERFIL DE USUARIO -->
+    <div class="modal-overlay" id="profile-modal">
+        <div class="modal-container" style="max-width: 520px;">
+            <button class="modal-close-btn" onclick="closeModal('profile-modal')"><i class="fas fa-times"></i></button>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <div style="width: 80px; height: 80px; border-radius: 50%; overflow: hidden; margin: 0 auto 12px auto; border: 3px solid var(--primary);">
+                    <img id="profile-avatar-img" src="" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h2>Mi Perfil en el Foro</h2>
+                <p id="profile-email-text" style="color: var(--text-muted); font-size: 0.88rem;"></p>
+            </div>
+
+            <form onsubmit="saveProfileSettings(event)">
+                <div class="form-group">
+                    <label class="form-label">Nombre o Apodo Público (Visible en tus posteos):</label>
+                    <input type="text" id="profile-display-name" class="form-control" placeholder="Ej: María Fernández" required minlength="2" maxlength="50">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Teléfono de contacto por defecto (Opcional):</label>
+                    <input type="tel" id="profile-phone-input" class="form-control" placeholder="Ej: 3404-556677">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-save"></i> Guardar Cambios del Perfil
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: EDITAR HILO -->
+    <div class="modal-overlay" id="edit-thread-modal">
+        <div class="modal-container" style="max-width: 620px;">
+            <button class="modal-close-btn" onclick="closeModal('edit-thread-modal')"><i class="fas fa-times"></i></button>
+            <h2>Editar Publicación</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Modificá los datos o actualizá la información de tu hilo.</p>
+
+            <form onsubmit="submitEditThread(event)">
+                <input type="hidden" id="edit-thread-id">
+                <div class="form-group">
+                    <label class="form-label">Título de la publicación <span style="color:red;">*</span>:</label>
+                    <input type="text" id="edit-thread-title-input" class="form-control" required minlength="5" maxlength="120">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label class="form-label">Categoría <span style="color:red;">*</span>:</label>
+                        <select id="edit-thread-category-select" class="form-control">
+                            <option value="perdidos">🚨 Mascotas Perdidas y Encontradas</option>
+                            <option value="salud">🩺 Consultas Médicas / Veterinarias</option>
+                            <option value="ayuda">🆘 Pedidos de Ayuda y Tránsito</option>
+                            <option value="general">💬 General y Charlas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Barrio / Zona de Gálvez:</label>
+                        <input type="text" id="edit-thread-location-input" class="form-control">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label class="form-label">Teléfono de contacto:</label>
+                        <input type="tel" id="edit-thread-phone-input" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Subir Foto desde Celular/PC (Cloudinary):</label>
+                        <input type="file" id="edit-thread-image-file" class="form-control" accept="image/*" onchange="handleCloudinaryFileUpload(this, 'edit')">
+                        <div id="cloudinary-status-edit" style="font-size:0.82rem; color:var(--primary); font-weight:600; margin-top:4px;"></div>
+                        <input type="hidden" id="edit-thread-image-input">
+                    </div>
+                </div>
+
+                <div id="edit-image-preview-container" style="display: none; margin-bottom: 15px; text-align: center;">
+                    <img id="edit-image-preview-element" src="" alt="Vista Previa" style="max-height: 180px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin: 0 auto;">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Descripción detallada <span style="color:red;">*</span>:</label>
+                    <textarea id="edit-thread-content-input" class="form-control" required minlength="10" maxlength="2000"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-check"></i> Guardar Cambios
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: NEW THREAD -->
+    <div class="modal-overlay" id="new-thread-modal">
+        <div class="modal-container" style="max-width: 620px;">
+            <button class="modal-close-btn" onclick="closeModal('new-thread-modal')"><i class="fas fa-times"></i></button>
+            <h2>Crear Nuevo Hilo en el Foro</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px; font-size: 0.9rem;">Publicá tu consulta, mascota perdida o pedido de tránsito para la comunidad de Gálvez.</p>
+
+            <form onsubmit="createNewThread(event)">
+                <div class="form-group">
+                    <label class="form-label">Título de la publicación <span style="color:red;">*</span>:</label>
+                    <input type="text" id="thread-title-input" class="form-control" placeholder="Ej: Perra mestiza dorada perdida cerca de Parque San Martín..." required minlength="5" maxlength="120">
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label class="form-label">Categoría <span style="color:red;">*</span>:</label>
+                        <select id="thread-category-select" class="form-control">
+                            <option value="perdidos">🚨 Mascotas Perdidas y Encontradas</option>
+                            <option value="salud">🩺 Consultas Médicas / Veterinarias</option>
+                            <option value="ayuda">🆘 Pedidos de Ayuda y Tránsito</option>
+                            <option value="general">💬 General y Charlas</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Barrio / Zona de Gálvez:</label>
+                        <input type="text" id="thread-location-input" class="form-control" placeholder="Ej: Barrio Pedroni, Centro...">
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label class="form-label">Teléfono de contacto (Opcional):</label>
+                        <input type="tel" id="thread-phone-input" class="form-control" placeholder="Ej: 3404-556677">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Foto de la Mascota (Gratis via Cloudinary):</label>
+                        <input type="file" id="thread-image-file" class="form-control" accept="image/*" onchange="handleCloudinaryFileUpload(this, 'new')">
+                        <div id="cloudinary-status-new" style="font-size:0.82rem; color:var(--primary); font-weight:600; margin-top:4px;"></div>
+                        <input type="hidden" id="thread-image-input">
+                    </div>
+                </div>
+
+                <div id="image-preview-container" style="display: none; margin-bottom: 15px; text-align: center;">
+                    <img id="image-preview-element" src="" alt="Vista Previa" style="max-height: 180px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin: 0 auto;">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Descripción detallada <span style="color:red;">*</span>:</label>
+                    <textarea id="thread-content-input" class="form-control" placeholder="Detallá raza, collar, situación, fecha u observaciones importantes..." required minlength="10" maxlength="2000"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-paper-plane"></i> Publicar en el Foro
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: DETALLE DE HILO & RESPUESTAS COMPLETAS -->
+    <div class="modal-overlay" id="thread-detail-modal">
+        <div class="modal-container" style="max-width: 720px;">
+            <button class="modal-close-btn" onclick="closeModal('thread-detail-modal')"><i class="fas fa-times"></i></button>
+            
+            <div id="thread-detail-content">
+                <!-- Dynamic Content injected by js/foro.js -->
+            </div>
+
+            <hr style="border-top: 1px solid var(--border-color); margin: 20px 0;">
+
+            <h4 style="margin-bottom: 12px; font-size: 1.05rem;"><i class="fas fa-comment-dots" style="color: var(--primary);"></i> Agregar Respuesta</h4>
+            <form onsubmit="submitReplyFromDetailModal(event)">
+                <input type="hidden" id="detail-modal-thread-id">
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <textarea id="detail-modal-reply-input" class="form-control" placeholder="Escribí tu respuesta o datos para ayudar..." required minlength="2" maxlength="1000" style="min-height: 80px;"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-sm" style="float: right;">
+                    <i class="fas fa-paper-plane"></i> Publicar Respuesta
+                </button>
+                <div style="clear: both;"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL: REPLY (RÁPIDO) -->
+    <div class="modal-overlay" id="reply-modal">
+        <div class="modal-container">
+            <button class="modal-close-btn" onclick="closeModal('reply-modal')"><i class="fas fa-times"></i></button>
+            <h3>Responder Publicación</h3>
+            <p id="reply-thread-title-preview" style="color: var(--primary); font-weight: 600; margin-bottom: 15px; font-size: 0.9rem;"></p>
+
+            <form onsubmit="submitReply(event)">
+                <input type="hidden" id="reply-thread-id">
+                <div class="form-group">
+                    <textarea id="reply-content-input" class="form-control" placeholder="Escribí tu respuesta o información útil..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    Enviar Respuesta
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- MAIN FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
+                        <div class="logo-title">
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
+                        </div>
+                    </div>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_index.html">Inicio</a></li>
+                        <li><a href="m_quienes-somos.html">Información</a></li>
+                        <li><a href="m_adopciones.html">Adopta</a></li>
+                        <li><a href="m_historias.html">Historias</a></li>
+                        <li><a href="m_final-feliz.html">Final Feliz</a></li>
+                        <li><a href="m_refugio.html">Necesidades</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Comunidad</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="m_hacete-socio.html">Hacete Socio</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes">Leyes y Denuncias</a></li>
+                        <li><a href="m_foro.html">Perdidos y Encontrados</a></li>
+                        <li><a href="m_donaciones.html">Cómo aportar</a></li>
+                        <li><a href="m_quienes-somos.html#contacto">Contacto</a></li>
+                        </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Redes Sociales</h4>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <p style="margin: 0;">&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <div class="footer-admin-slot">
+                    <a href="#" onclick="openModal('login-modal'); return false;" class="footer-admin-link" style="color: #8FA58A; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-lock"></i> Acceso Exclusivo Administración
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase App, Auth & Firestore SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+    <!-- SCRIPTS -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin-bar.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/foro.js"></script>
+
+    <!-- ─── BOTÓN FLOTANTE WHATSAPP ─── -->
+    <a href="https://wa.me/5493404521246" class="m-floating-wa" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ─── NAVEGACIÓN INFERIOR FIJA MÓVIL ─── -->
+    <nav class="m-bottom-nav">
+        <a href="m_index.html" class="m-nav-item ">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="m_adopciones.html" class="m-nav-item ">
+            <i class="fas fa-paw"></i>
+            <span>Adopta</span>
+        </a>
+        <a href="m_final-feliz.html" class="m-nav-item ">
+            <i class="fas fa-heart"></i>
+            <span>Final Feliz</span>
+        </a>
+        <a href="m_foro.html" class="m-nav-item active">
+            <i class="fas fa-bullhorn"></i>
+            <span>Perdidos</span>
+        </a>
+        <button type="button" onclick="toggleMobileDrawer(true)" class="m-nav-item">
+            <i class="fas fa-bars"></i>
+            <span>Menú</span>
+        </button>
+    </nav>
+
+    <script src="js/mobile-app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="js/mobile-detect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Cuidado Responsable - Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Guías, consejos veterinarios y pautas para la tenencia responsable de animales no humanos. Asociación Civil Amigos de los Animales No Humanos de Gálvez.">
+    <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-styles.css">
+</head>
+<body class="m-body">
+
+        <!-- ─── HEADER MÓVIL SUPERIOR ─── -->
+    <header class="m-header">
+        <div class="m-header-top">
+            <a href="m_index.html" class="m-logo-link">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="m-logo-badge">
+                <div class="m-logo-text">
+                    <span class="m-logo-main">ASOCIACIÓN CIVIL</span>
+                    <span class="m-logo-sub">AMIGOS DE LOS ANIMALES</span>
+                </div>
+            </a>
+
+            <div class="m-header-actions">
+                <a href="https://wa.me/5493404521246" target="_blank" class="m-header-btn m-btn-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="m_donaciones.html" class="m-btn-pill-donar"><i class="fas fa-heart"></i> Aportar</a>
+                <button type="button" onclick="toggleMobileDrawer(true)" class="m-header-btn" title="Menú"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── DRAWER MENÚ LATERAL MÓVIL ─── -->
+    <div id="m-overlay" class="m-overlay"></div>
+    <aside id="m-drawer" class="m-drawer">
+        <div class="m-drawer-header">
+            <div class="m-drawer-header-brand">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación">
+                <span class="m-drawer-header-title">MENÚ PRINCIPAL</span>
+            </div>
+            <button type="button" onclick="toggleMobileDrawer(false)" class="m-drawer-close" aria-label="Cerrar Menú">&times;</button>
+        </div>
+
+        <div class="m-drawer-body">
+            <ul class="m-drawer-menu">
+                <li class="m-drawer-item"><a href="m_index.html" class="m-drawer-link "><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="m-drawer-item">
+                    <a href="m_quienes-somos.html" class="m-drawer-link "><i class="fas fa-info-circle"></i> Información</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_quienes-somos.html#sobre-nosotros" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Quiénes Somos</a></li>
+                        <li><a href="m_quienes-somos.html#documentos-legales" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Estatuto y Legal</a></li>
+                        <li><a href="m_quienes-somos.html#veterinarios" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Veterinarios</a></li>
+                        <li><a href="m_quienes-somos.html#faq" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                        <li><a href="m_quienes-somos.html#contacto" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_adopciones.html" class="m-drawer-link "><i class="fas fa-paw"></i> Adopta</a></li>
+                <li class="m-drawer-item"><a href="m_historias.html" class="m-drawer-link "><i class="fas fa-book-open"></i> Historias</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_final-feliz.html" class="m-drawer-link "><i class="fas fa-heart"></i> Final Feliz</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_final-feliz.html#adopciones-exitosas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Casos Adoptados</a></li>
+                        <li><a href="m_final-feliz.html#galeria-collage" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Galería y Collage</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item">
+                    <a href="m_cuidado-responsable.html" class="m-drawer-link active"><i class="fas fa-shield-cat"></i> Cuidado Responsable</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_cuidado-responsable.html#pautas-cuidado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Guía y Consejos</a></li>
+                        <li><a href="m_cuidado-responsable.html#adopciones-felinas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Adopciones Felinas</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Leyes y Denuncias</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_hacete-socio.html" class="m-drawer-link "><i class="fas fa-id-card"></i> Hacete Socio</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_refugio.html" class="m-drawer-link "><i class="fas fa-hand-holding-heart"></i> Necesidades</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_refugio.html#necesidades-hoy" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Urgentes de Hoy</a></li>
+                        <li><a href="m_refugio.html#insumos-permanentes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Insumos Permanentes</a></li>
+                        <li><a href="m_refugio.html#voluntariado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Sumate al Equipo</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_foro.html" class="m-drawer-link "><i class="fas fa-bullhorn"></i> Perdidos y Encontrados</a></li>
+                <li class="m-drawer-item"><a href="m_donaciones.html" class="m-drawer-link m-drawer-highlight "><i class="fas fa-hand-holding-dollar"></i> Cómo aportar</a></li>
+            </ul>
+        </div>
+
+        <div class="m-drawer-footer">
+            <button type="button" class="m-drawer-admin-btn" onclick="openModal('login-modal'); toggleMobileDrawer(false);">
+                <i class="fas fa-user-shield"></i> Acceso Administración
+            </button>
+            <div class="m-drawer-socials">
+                <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5493404521246" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </aside>
+<!-- PAGE HERO -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color:#fff; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <span class="badge badge-secondary" style="margin-bottom: 12px;">Convivencia y Bienestar</span>
+            <h1 style="color:#fff; font-size: 2.5rem; margin-bottom: 10px;">Cuidado Responsable</h1>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Pautas éticas, calendario sanitario, castración y consejos para una convivencia respetuosa.</p>
+        </div>
+    </section>
+
+    <!-- SUB-NAVIGATION PILLS -->
+    <nav class="subnav-pills-bar">
+        <div class="container">
+            <ul class="subnav-pills-list">
+                <li><a href="#pautas-cuidado" class="subnav-pill active"><i class="fas fa-heart-pulse"></i> Pautas de Cuidado</a></li>
+                <li><a href="#adopciones-felinas" class="subnav-pill"><i class="fas fa-cat"></i> Adopciones Felinas Gálvez</a></li>
+                <li><a href="#leyes" class="subnav-pill"><i class="fas fa-scale-balanced"></i> Leyes y Denuncias</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: PAUTAS DE CUIDADO RESPONSABLE -->
+    <section class="section-padding" id="pautas-cuidado">
+        <div class="container">
+            <div style="text-align: center; max-width: 720px; margin: 0 auto 35px auto;">
+                <span class="badge badge-primary" style="margin-bottom: 10px;">Compromiso y Convivencia</span>
+                <h2 class="section-title">Pilares del Cuidado Responsable</h2>
+                <p class="section-subtitle">
+                    Adoptar o convivir con un animal de compañía es una responsabilidad diaria de respeto, salud, afecto y protección ética.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-bottom: 40px;">
+                
+                <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 15px;">
+                        <i class="fas fa-bowl-food"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Alimentación y Refugio</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
+                        Agua fresca y limpia renovada todos los días, alimento balanceado adecuado a su edad y tamaño, y un lugar techado, limpio y seco protegido del frío, la lluvia y el calor extremo.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--secondary-light); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 15px;">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Sanidad y Vacunación</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
+                        Vacuna antirrábica anual obligatoria por ley nacional, vacunas preventivas (séxtuple/quíntuple en caninos y triple felina), y desparasitación periódica interna y externa contra pulgas y garrapatas.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 15px;">
+                        <i class="fas fa-scissors"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 8px;">Castración Temprana</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
+                        La castración quirúrgica tanto de hembras como de machos (perros y gatos) a partir de los 6 meses es el único método ético y eficaz para evitar la superpoblación, tumores y escapes callejeros.
+                    </p>
+                </div>
+
+                <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--secondary-light); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 15px;">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: var(--secondary); margin-bottom: 8px;">Identificación y Paseos</h3>
+                    <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.5;">
+                        Collar con chapa identificatoria con teléfono. Paseos diarios siempre con correa para evitar extravíos, accidentes o peleas. Mantener al animal siempre dentro del predio familiar.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ADOPCIONES FELINAS GÁLVEZ SPOTLIGHT -->
+    <section class="section-padding bg-alt" id="adopciones-felinas">
+        <div class="container">
+            <div class="feline-spotlight-box">
+                <div class="feline-icon-round">
+                    <i class="fas fa-cat"></i>
+                </div>
+                <div>
+                    <span class="badge badge-secondary" style="margin-bottom: 10px;">Protección y Rescate Felino</span>
+                    <h2 style="font-size: 1.85rem; color: var(--primary); margin-bottom: 12px;">Adopciones Felinas Gálvez</h2>
+                    <p style="color: var(--text-muted); font-size: 0.96rem; line-height: 1.6; margin-bottom: 15px;">
+                        En Gálvez contamos con una red dedicada al cuidado, rescate, atención veterinaria y adopción responsable de gatos. Podes conocer a los gatitos en tránsito, colaborar con alimento o apadrinar casos especiales a través de su cuenta oficial de Instagram.
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-main); font-weight: 600; margin-bottom: 20px;">
+                        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Hogares 100% seguros con redes</span>
+                        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Castración obligatoria</span>
+                        <span><i class="fas fa-check-circle" style="color:#2e7d32;"></i> Seguimiento de adopciones</span>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/adopfelinasgalvez/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg" style="box-shadow: 0 4px 15px rgba(201,101,69,0.35);">
+                        <i class="fab fa-instagram"></i> @adopfelinasgalvez
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: LEYES Y DENUNCIAS DE PROTECCIÓN ANIMAL -->
+    <section class="section-padding" id="leyes">
+        <div class="container">
+            <div style="text-align: center; max-width: 720px; margin: 0 auto 35px auto;">
+                <span class="badge badge-primary" style="margin-bottom: 10px;">Marco Legal & Derechos</span>
+                <h2 class="section-title">Leyes y Ordenanzas de Protección Animal</h2>
+                <p class="section-subtitle">
+                    Información jurídica esencial sobre tenencia responsable y herramientas legales para denunciar el maltrato animal en la ciudad de Gálvez.
+                </p>
+            </div>
+
+            <!-- Ley 14.346 -->
+            <div style="background: var(--bg-card); padding: 35px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 30px; box-shadow: var(--shadow-sm);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 18px;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--primary); margin: 0 0 4px 0;">Ley Nacional 14.346 - Maltrato y Crueldad Animal</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">República Argentina • Código Penal</span>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-muted); margin-bottom: 15px; line-height: 1.6;">
+                    La Ley 14.346 sanciona penalmente a toda persona que cometa actos de maltrato o crueldad hacia los animales. Establece penas de prisión de quince días a un año y es de aplicación en todo el territorio nacional.
+                </p>
+
+                <h4 style="margin-bottom: 10px; color: var(--text-main);">Son considerados delitos de maltrato o crueldad:</h4>
+                <ul style="color: var(--text-muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; padding-left: 20px; list-style-type: disc;">
+                    <li>No alimentar en cantidad y calidad suficiente a los animales domésticos o cautivos.</li>
+                    <li>Mantener animales en espacios insalubres, atados permanentemente o sin protección contra el clima.</li>
+                    <li>Azuzarlos o castigarlos con instrumentos que les causen dolores innecesarios.</li>
+                    <li>Hacerlos trabajar en jornadas excesivas sin darles descanso adecuado o exceder sus fuerzas físicas.</li>
+                    <li>Estimularlos con drogas sin perseguir fines estrictamente terapéuticos.</li>
+                </ul>
+            </div>
+
+            <!-- Municipal Ordinances Gálvez -->
+            <div style="background: var(--bg-card); padding: 35px; border-radius: var(--radius-md); border: 1px solid var(--border-color); margin-bottom: 30px; box-shadow: var(--shadow-sm);">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 18px;">
+                    <div style="width: 50px; height: 50px; border-radius: 50%; background: var(--secondary-light); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1.5rem; color: var(--secondary); margin: 0 0 4px 0;">Ordenanzas Municipales de Gálvez</h3>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">Municipalidad de Gálvez • Santa Fe</span>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-muted); margin-bottom: 20px; line-height: 1.6;">
+                    Las normativas locales vigentes en Gálvez regulan el control ético poblacional de la fauna urbana, promueven las campañas gratuitas y sistemáticas de esterilización y sancionan el abandono en la vía pública.
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                    <div style="background: var(--bg-body); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                        <h4 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-scissors"></i> Castraciones Gratuitas</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">El municipio garantiza jornadas sistemáticas, masivas y gratuitas de castración para caninos y felinos.</p>
+                    </div>
+                    <div style="background: var(--bg-body); padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+                        <h4 style="color: var(--primary); margin-bottom: 8px;"><i class="fas fa-shield-dog"></i> Tenencia Responsable</h4>
+                        <p style="font-size: 0.9rem; color: var(--text-muted); margin: 0;">Obligatoriedad de pasear con correa, vacunación antirrábica al día y mantener a los animales dentro del domicilio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guía de Denuncia en Gálvez -->
+            <div style="background: linear-gradient(135deg, rgba(201,101,69,0.08), rgba(201,101,69,0.02)); padding: 35px; border-radius: var(--radius-md); border: 1px solid rgba(201,101,69,0.25);">
+                <h3 style="color: var(--secondary); margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                    <i class="fas fa-triangle-exclamation"></i> Guía Rápida para Denunciar Maltrato Animal en Gálvez
+                </h3>
+                <ol style="color: var(--text-muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 12px; padding-left: 20px; line-height: 1.5;">
+                    <li><strong>Registro de Evidencia:</strong> Tomá fotografías o videos claros donde se constate el estado del animal, las condiciones del lugar, la dirección exacta y la fecha.</li>
+                    <li><strong>Radicar la Denuncia:</strong> Dirigite a la <strong>Comisaría 2da de Gálvez</strong> o al <strong>Ministerio Público de la Acusación (MPA)</strong>. Al ser un delito de acción penal pública, los oficiales están obligados a tomar la denuncia formal.</li>
+                    <li><strong>Avisar a la Asociación:</strong> Contactanos por nuestras redes o publicá en la sección de Perdidos y Encontrados para dar seguimiento y visibilidad comunitaria.</li>
+                </ol>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MAIN FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
+                        <div class="logo-title">
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
+                        </div>
+                    </div>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_index.html">Inicio</a></li>
+                        <li><a href="m_quienes-somos.html">Información</a></li>
+                        <li><a href="m_adopciones.html">Adopta</a></li>
+                        <li><a href="m_historias.html">Historias</a></li>
+                        <li><a href="m_final-feliz.html">Final Feliz</a></li>
+                        <li><a href="m_refugio.html">Necesidades</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Comunidad</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="m_hacete-socio.html">Hacete Socio</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes">Leyes y Denuncias</a></li>
+                        <li><a href="m_foro.html">Perdidos y Encontrados</a></li>
+                        <li><a href="m_donaciones.html">Cómo aportar</a></li>
+                        <li><a href="m_quienes-somos.html#contacto">Contacto</a></li>
+                        </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Redes Sociales</h4>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <p style="margin: 0;">&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <div class="footer-admin-slot">
+                    <a href="#" onclick="openModal('login-modal'); return false;" class="footer-admin-link" style="color: #8FA58A; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-lock"></i> Acceso Exclusivo Administración
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase App & Auth SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin-bar.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- ─── BOTÓN FLOTANTE WHATSAPP ─── -->
+    <a href="https://wa.me/5493404521246" class="m-floating-wa" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ─── NAVEGACIÓN INFERIOR FIJA MÓVIL ─── -->
+    <nav class="m-bottom-nav">
+        <a href="m_index.html" class="m-nav-item ">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="m_adopciones.html" class="m-nav-item ">
+            <i class="fas fa-paw"></i>
+            <span>Adopta</span>
+        </a>
+        <a href="m_final-feliz.html" class="m-nav-item ">
+            <i class="fas fa-heart"></i>
+            <span>Final Feliz</span>
+        </a>
+        <a href="m_foro.html" class="m-nav-item ">
+            <i class="fas fa-bullhorn"></i>
+            <span>Perdidos</span>
+        </a>
+        <button type="button" onclick="toggleMobileDrawer(true)" class="m-nav-item">
+            <i class="fas fa-bars"></i>
+            <span>Menú</span>
+        </button>
+    </nav>
+
+    <script src="js/mobile-app.js"></script>
+
+</body>
+</html>

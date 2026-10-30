@@ -206,6 +206,7 @@ function renderRefugioNeeds(needs) {
 // Render Goals / Metas de Recaudación
 function renderRefugioGoals(goals) {
     const container = document.getElementById('refugio-goals-container');
+    if (!container) return;
     const adminActionContainer = document.getElementById('admin-goals-action-container');
 
     if (adminActionContainer) {
@@ -302,14 +303,19 @@ function openNeedEditModal() {
         icon: urgency.toLowerCase().includes('urgente') ? 'fa-exclamation-triangle' : 'fa-box-open'
     };
 
+    refugioNeedsList.unshift(item);
+    saveLocalNeeds(refugioNeedsList);
+    renderRefugioNeeds(refugioNeedsList);
+
     if (typeof firebase !== 'undefined' && isFirebaseConfigured && db) {
         db.collection('refugio_needs').doc(item.id).set(item).then(() => {
-            showToast('¡Necesidad agregada a Firestore!', 'success');
+            showToast('¡Necesidad guardada con éxito!', 'success');
+        }).catch(err => {
+            console.warn("Error Firestore:", err);
+            showToast('Necesidad guardada localmente.', 'success');
         });
     } else {
-        refugioNeedsList.unshift(item);
-        saveLocalNeeds(refugioNeedsList);
-        showToast('Necesidad agregada.', 'success');
+        showToast('Necesidad guardada localmente.', 'success');
     }
 }
 
@@ -317,15 +323,14 @@ function deleteNeed(id) {
     if (!currentUser || !currentUser.isAdmin) return;
     if (!confirm('¿Eliminar esta necesidad de la lista?')) return;
 
+    refugioNeedsList = refugioNeedsList.filter(n => String(n.id) !== String(id));
+    saveLocalNeeds(refugioNeedsList);
+    renderRefugioNeeds(refugioNeedsList);
+
     if (typeof firebase !== 'undefined' && isFirebaseConfigured && db) {
-        db.collection('refugio_needs').doc(String(id)).delete().then(() => {
-            showToast('Necesidad eliminada.', 'info');
-        });
-    } else {
-        refugioNeedsList = refugioNeedsList.filter(n => String(n.id) !== String(id));
-        saveLocalNeeds(refugioNeedsList);
-        showToast('Necesidad eliminada.', 'info');
+        db.collection('refugio_needs').doc(String(id)).delete().catch(e => console.warn(e));
     }
+    showToast('Necesidad eliminada.', 'info');
 }
 
 // Admin Goal Create / Edit Modal
@@ -487,15 +492,14 @@ function deleteGoal(goalId) {
     if (!currentUser || !currentUser.isAdmin) return;
     if (!confirm('¿Estás seguro/a de eliminar esta meta del refugio?')) return;
 
+    refugioGoalsList = refugioGoalsList.filter(g => String(g.id) !== String(goalId));
+    saveLocalGoals(refugioGoalsList);
+    renderRefugioGoals(refugioGoalsList);
+
     if (typeof firebase !== 'undefined' && isFirebaseConfigured && db) {
-        db.collection('refugio_goals').doc(String(goalId)).delete().then(() => {
-            showToast('Meta eliminada.', 'info');
-        });
-    } else {
-        refugioGoalsList = refugioGoalsList.filter(g => String(g.id) !== String(goalId));
-        saveLocalGoals(refugioGoalsList);
-        showToast('Meta eliminada.', 'info');
+        db.collection('refugio_goals').doc(String(goalId)).delete().catch(e => console.warn(e));
     }
+    showToast('Meta eliminada.', 'info');
 }
 
 /* ==========================================================================
@@ -627,9 +631,9 @@ function renderPageFloatingDonors() {
 }
 
 function renderGoalFloatingDonors(goalId) {
-    renderPageFloatingDonors();
     const container = document.getElementById('goal-floating-donors-container');
     if (!container) return;
+    renderPageFloatingDonors();
 
     const goalDonations = goalDonationsList.filter(d => String(d.goalId) === String(goalId));
 

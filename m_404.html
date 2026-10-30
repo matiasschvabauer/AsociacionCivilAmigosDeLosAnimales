@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="js/mobile-detect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Página No Encontrada (404) | Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Página no encontrada en la web de la Asociación Civil Amigos de los Animales No Humanos de Gálvez, Santa Fe.">
+    <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-styles.css">
+</head>
+<body class="m-body">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+        <!-- ─── HEADER MÓVIL SUPERIOR ─── -->
+    <header class="m-header">
+        <div class="m-header-top">
+            <a href="m_index.html" class="m-logo-link">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="m-logo-badge">
+                <div class="m-logo-text">
+                    <span class="m-logo-main">ASOCIACIÓN CIVIL</span>
+                    <span class="m-logo-sub">AMIGOS DE LOS ANIMALES</span>
+                </div>
+            </a>
+
+            <div class="m-header-actions">
+                <a href="https://wa.me/5493404521246" target="_blank" class="m-header-btn m-btn-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="m_donaciones.html" class="m-btn-pill-donar"><i class="fas fa-heart"></i> Aportar</a>
+                <button type="button" onclick="toggleMobileDrawer(true)" class="m-header-btn" title="Menú"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── DRAWER MENÚ LATERAL MÓVIL ─── -->
+    <div id="m-overlay" class="m-overlay"></div>
+    <aside id="m-drawer" class="m-drawer">
+        <div class="m-drawer-header">
+            <div class="m-drawer-header-brand">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación">
+                <span class="m-drawer-header-title">MENÚ PRINCIPAL</span>
+            </div>
+            <button type="button" onclick="toggleMobileDrawer(false)" class="m-drawer-close" aria-label="Cerrar Menú">&times;</button>
+        </div>
+
+        <div class="m-drawer-body">
+            <ul class="m-drawer-menu">
+                <li class="m-drawer-item"><a href="m_index.html" class="m-drawer-link "><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="m-drawer-item">
+                    <a href="m_quienes-somos.html" class="m-drawer-link "><i class="fas fa-info-circle"></i> Información</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_quienes-somos.html#sobre-nosotros" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Quiénes Somos</a></li>
+                        <li><a href="m_quienes-somos.html#documentos-legales" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Estatuto y Legal</a></li>
+                        <li><a href="m_quienes-somos.html#veterinarios" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Veterinarios</a></li>
+                        <li><a href="m_quienes-somos.html#faq" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                        <li><a href="m_quienes-somos.html#contacto" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_adopciones.html" class="m-drawer-link "><i class="fas fa-paw"></i> Adopta</a></li>
+                <li class="m-drawer-item"><a href="m_historias.html" class="m-drawer-link "><i class="fas fa-book-open"></i> Historias</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_final-feliz.html" class="m-drawer-link "><i class="fas fa-heart"></i> Final Feliz</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_final-feliz.html#adopciones-exitosas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Casos Adoptados</a></li>
+                        <li><a href="m_final-feliz.html#galeria-collage" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Galería y Collage</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item">
+                    <a href="m_cuidado-responsable.html" class="m-drawer-link "><i class="fas fa-shield-cat"></i> Cuidado Responsable</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_cuidado-responsable.html#pautas-cuidado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Guía y Consejos</a></li>
+                        <li><a href="m_cuidado-responsable.html#adopciones-felinas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Adopciones Felinas</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Leyes y Denuncias</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_hacete-socio.html" class="m-drawer-link "><i class="fas fa-id-card"></i> Hacete Socio</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_refugio.html" class="m-drawer-link "><i class="fas fa-hand-holding-heart"></i> Necesidades</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_refugio.html#necesidades-hoy" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Urgentes de Hoy</a></li>
+                        <li><a href="m_refugio.html#insumos-permanentes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Insumos Permanentes</a></li>
+                        <li><a href="m_refugio.html#voluntariado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Sumate al Equipo</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_foro.html" class="m-drawer-link "><i class="fas fa-bullhorn"></i> Perdidos y Encontrados</a></li>
+                <li class="m-drawer-item"><a href="m_donaciones.html" class="m-drawer-link m-drawer-highlight "><i class="fas fa-hand-holding-dollar"></i> Cómo aportar</a></li>
+            </ul>
+        </div>
+
+        <div class="m-drawer-footer">
+            <button type="button" class="m-drawer-admin-btn" onclick="openModal('login-modal'); toggleMobileDrawer(false);">
+                <i class="fas fa-user-shield"></i> Acceso Administración
+            </button>
+            <div class="m-drawer-socials">
+                <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5493404521246" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </aside>
+<!-- 404 CONTENT SECTION -->
+    <main class="page-404-section">
+        <div class="card-404">
+            <span class="badge-404"><i class="fas fa-compass"></i> Error 404 • Página No Encontrada</span>
+            
+            <div class="code-404-display">
+                <span>4</span>
+                <span class="zero-digit"><i class="fas fa-paw"></i></span>
+                <span>4</span>
+            </div>
+
+            <!-- Animated Logo Loader -->
+            <div class="logo-loader-container" style="width: 140px; height: 95px; margin: 0 auto 16px auto;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 486 326" class="logo-loader-svg" aria-label="Logo Asociación">
+                    <path class="logo-loader-path" d="M 257 1 L 254 2 L 252 4 L 251 6 L 250 8 L 246 17 L 240 33 L 232 48 L 229 55 L 227 60 L 227 66 L 231 70 L 237 70 L 241 66 L 243 61 L 245 57 L 247 50 L 255 32 L 256 30 L 259 27 L 262 30 L 264 35 L 269 43 L 270 47 L 280 66 L 282 68 L 284 69 L 381 69 L 383 68 L 385 66 L 387 62 L 390 56 L 395 43 L 401 32 L 404 30 L 405 32 L 406 34 L 411 46 L 412 51 L 415 56 L 418 65 L 419 69 L 420 76 L 420 106 L 419 140 L 416 143 L 413 144 L 408 145 L 389 149 L 382 151 L 375 153 L 372 154 L 370 155 L 367 158 L 367 160 L 368 162 L 371 163 L 374 163 L 383 160 L 390 158 L 409 154 L 413 152 L 417 153 L 417 160 L 416 166 L 414 168 L 412 169 L 394 169 L 381 170 L 374 171 L 371 172 L 369 173 L 368 175 L 368 178 L 369 180 L 374 181 L 382 179 L 394 178 L 407 177 L 411 177 L 413 179 L 412 182 L 411 185 L 408 192 L 407 194 L 406 196 L 404 199 L 402 202 L 399 206 L 393 212 L 387 217 L 384 219 L 380 221 L 374 224 L 369 226 L 365 227 L 357 229 L 351 230 L 341 231 L 329 231 L 312 230 L 304 229 L 298 228 L 293 227 L 284 224 L 277 221 L 272 218 L 269 216 L 265 213 L 256 204 L 253 200 L 251 197 L 249 194 L 248 192 L 247 190 L 245 185 L 241 173 L 240 166 L 239 163 L 237 158 L 231 146 L 229 143 L 226 139 L 223 135 L 212 124 L 208 121 L 204 118 L 199 115 L 194 112 L 192 111 L 190 110 L 185 108 L 176 105 L 172 104 L 168 103 L 161 102 L 142 102 L 135 103 L 130 104 L 126 105 L 119 107 L 114 109 L 102 115 L 97 118 L 93 121 L 89 124 L 79 134 L 75 139 L 73 142 L 71 145 L 66 154 L 64 159 L 61 169 L 60 171 L 55 176 L 41 189 L 31 200 L 22 212 L 20 215 L 18 218 L 15 223 L 12 228 L 10 232 L 7 238 L 3 250 L 2 255 L 1 263 L 1 268 L 2 277 L 3 280 L 4 283 L 5 285 L 6 287 L 8 290 L 16 298 L 19 300 L 21 301 L 23 302 L 28 304 L 32 305 L 38 306 L 54 306 L 61 313 L 64 315 L 72 319 L 75 320 L 80 321 L 88 322 L 188 322 L 191 319 L 191 312 L 188 309 L 186 308 L 174 308 L 93 309 L 85 308 L 81 307 L 78 306 L 70 302 L 62 294 L 60 291 L 59 289 L 58 287 L 57 284 L 56 280 L 55 274 L 56 268 L 57 264 L 60 258 L 66 250 L 67 248 L 68 246 L 69 243 L 70 239 L 71 223 L 71 192 L 72 184 L 73 178 L 74 173 L 75 170 L 76 167 L 78 162 L 81 156 L 87 147 L 102 132 L 105 130 L 110 127 L 118 123 L 123 121 L 126 120 L 133 118 L 138 117 L 147 116 L 156 116 L 165 117 L 170 118 L 174 119 L 177 120 L 182 122 L 186 125 L 188 125 L 190 126 L 199 132 L 204 136 L 210 142 L 215 148 L 218 152 L 221 157 L 222 159 L 223 161 L 225 166 L 228 179 L 232 191 L 238 203 L 244 212 L 255 223 L 259 226 L 262 228 L 265 230 L 279 237 L 288 240 L 292 241 L 296 242 L 302 243 L 310 244 L 326 245 L 348 245 L 356 244 L 361 243 L 365 242 L 375 239 L 380 237 L 384 235 L 390 232 L 393 230 L 396 228 L 401 224 L 411 214 L 414 210 L 416 207 L 418 204 L 420 200 L 423 194 L 427 179 L 429 177 L 431 176 L 434 176 L 457 177 L 465 178 L 469 179 L 477 182 L 483 181 L 484 179 L 484 177 L 483 175 L 481 173 L 478 172 L 474 171 L 470 170 L 464 169 L 452 168 L 432 168 L 430 166 L 430 162 L 431 154 L 432 150 L 434 148 L 438 147 L 445 146 L 455 145 L 473 146 L 479 146 L 481 145 L 482 143 L 482 140 L 479 137 L 474 136 L 453 136 L 445 137 L 439 138 L 438 139 L 433 138 L 433 112 L 435 96 L 434 74 L 433 68 L 432 63 L 431 59 L 430 56 L 427 48 L 420 30 L 414 15 L 411 8 L 410 6 L 406 2 L 400 2 L 397 5 L 394 11 L 390 20 L 383 34 L 378 47 L 375 53 L 372 55 L 315 55 L 304 54 L 296 55 L 293 55 L 291 54 L 289 52 L 285 45 L 277 30 L 265 5 L 262 2 L 260 1 Z M 57 198 L 57 203 L 56 237 L 55 240 L 54 242 L 48 250 L 45 256 L 44 259 L 43 262 L 42 266 L 42 282 L 44 287 L 43 291 L 38 291 L 34 290 L 29 288 L 26 286 L 20 280 L 19 278 L 18 276 L 17 273 L 16 266 L 17 259 L 20 248 L 21 245 L 27 233 L 30 228 L 32 225 L 41 213 L 46 208 L 50 202 L 53 200 Z" fill="currentColor" fill-rule="evenodd" />
+                    <path class="logo-loader-detail" d="M 148 228 L 144 229 L 141 231 L 139 234 L 138 237 L 138 240 L 139 243 L 140 245 L 141 247 L 145 254 L 147 256 L 147 257 L 148 258 L 150 259 L 152 260 L 159 260 L 161 259 L 164 256 L 168 249 L 172 241 L 172 237 L 171 234 L 169 232 L 169 231 L 168 230 L 166 229 L 161 228 Z" fill="currentColor" />
+                    <path class="logo-loader-detail" d="M 190 200 L 188 201 L 185 204 L 184 206 L 184 211 L 185 213 L 188 216 L 190 217 L 195 217 L 197 216 L 200 213 L 201 211 L 201 206 L 200 204 L 197 201 L 195 200 Z" fill="currentColor" />
+                    <path class="logo-loader-detail" d="M 115 200 L 113 201 L 110 204 L 109 206 L 109 211 L 110 213 L 113 216 L 116 217 L 120 217 L 122 216 L 125 213 L 126 211 L 126 206 L 125 204 L 122 201 L 120 200 Z" fill="currentColor" />
+                    <path class="logo-loader-detail" d="M 321 149 L 319 150 L 317 151 L 316 152 L 315 154 L 314 156 L 314 162 L 315 165 L 320 174 L 322 177 L 324 179 L 326 180 L 328 181 L 333 181 L 335 180 L 340 175 L 343 170 L 347 162 L 347 156 L 346 154 L 344 151 L 342 150 L 340 149 Z" fill="currentColor" />
+                    <path class="logo-loader-detail" d="M 364 121 L 360 125 L 360 133 L 363 136 L 365 137 L 370 137 L 374 135 L 374 134 L 376 132 L 376 126 L 374 124 L 374 123 L 373 122 L 371 121 Z" fill="currentColor" />
+                    <path class="logo-loader-detail" d="M 289 121 L 285 125 L 284 129 L 285 133 L 288 136 L 290 137 L 296 137 L 298 136 L 300 134 L 301 132 L 301 126 L 300 124 L 297 121 Z" fill="currentColor" />
+                </svg>
+            </div>
+
+            <h1 class="title-404">¡Huy! Esta página se fue a pasear</h1>
+            <p class="desc-404">
+                El enlace que estás buscando no existe, fue movido o cambió de dirección. Pero no te preocupes: nuestros rescatados y proyectos siguen activos esperándote.
+            </p>
+
+            <div class="actions-404">
+                <a href="m_index.html" class="btn btn-secondary">
+                    <i class="fas fa-home"></i> Volver al Inicio
+                </a>
+                <a href="m_adopciones.html" class="btn btn-primary">
+                    <i class="fas fa-dog"></i> Ver Perros en Adopción
+                </a>
+                <a href="m_quienes-somos.html#contacto" class="btn btn-outline">
+                    <i class="fas fa-envelope"></i> Contactanos
+                </a>
+            </div>
+
+            <div class="quick-links-404">
+                <p>Otras secciones de interés:</p>
+                <div class="links-grid-404">
+                    <a href="m_adopciones.html" class="link-pill-404"><i class="fas fa-paw"></i> Adopta</a>
+                    <a href="m_foro.html" class="link-pill-404"><i class="fas fa-comments"></i> Foro</a>
+                    <a href="m_hacete-socio.html" class="link-pill-404"><i class="fas fa-id-card"></i> Hacete Socio</a>
+                    <a href="m_refugio.html" class="link-pill-404"><i class="fas fa-hand-holding-heart"></i> Refugio</a>
+                    <a href="m_donaciones.html" class="link-pill-404"><i class="fas fa-heart"></i> Cómo aportar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- MAIN FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
+                        <div class="logo-title">
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
+                        </div>
+                    </div>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_index.html">Inicio</a></li>
+                        <li><a href="m_quienes-somos.html">Información</a></li>
+                        <li><a href="m_adopciones.html">Adopta</a></li>
+                        <li><a href="m_historias.html">Historias</a></li>
+                        <li><a href="m_final-feliz.html">Final Feliz</a></li>
+                        <li><a href="m_refugio.html">Necesidades</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Comunidad</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="m_hacete-socio.html">Hacete Socio</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes">Leyes y Denuncias</a></li>
+                        <li><a href="m_foro.html">Perdidos y Encontrados</a></li>
+                        <li><a href="m_donaciones.html">Cómo aportar</a></li>
+                        <li><a href="m_quienes-somos.html#contacto">Contacto</a></li>
+                        </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Redes Sociales</h4>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios y alertas:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <p style="margin: 0;">&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <div class="footer-admin-slot">
+                    <a href="#" onclick="openModal('login-modal'); return false;" class="footer-admin-link" style="color: #8FA58A; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-lock"></i> Acceso Exclusivo Administración
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase SDKs & App Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin-bar.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- ─── BOTÓN FLOTANTE WHATSAPP ─── -->
+    <a href="https://wa.me/5493404521246" class="m-floating-wa" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ─── NAVEGACIÓN INFERIOR FIJA MÓVIL ─── -->
+    <nav class="m-bottom-nav">
+        <a href="m_index.html" class="m-nav-item ">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="m_adopciones.html" class="m-nav-item ">
+            <i class="fas fa-paw"></i>
+            <span>Adopta</span>
+        </a>
+        <a href="m_final-feliz.html" class="m-nav-item ">
+            <i class="fas fa-heart"></i>
+            <span>Final Feliz</span>
+        </a>
+        <a href="m_foro.html" class="m-nav-item ">
+            <i class="fas fa-bullhorn"></i>
+            <span>Perdidos</span>
+        </a>
+        <button type="button" onclick="toggleMobileDrawer(true)" class="m-nav-item">
+            <i class="fas fa-bars"></i>
+            <span>Menú</span>
+        </button>
+    </nav>
+
+    <script src="js/mobile-app.js"></script>
+
+</body>
+</html>

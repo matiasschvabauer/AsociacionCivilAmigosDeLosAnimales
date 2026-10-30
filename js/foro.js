@@ -16,6 +16,37 @@ const CLOUDINARY_CONFIG = {
 
 const INITIAL_THREADS = [];
 
+function isMockThread(t) {
+    if (!t) return true;
+    const id = String(t.id || '');
+    const title = String(t.title || '').toLowerCase();
+    const author = String(t.author || '').toLowerCase();
+    const content = String(t.content || '').toLowerCase();
+    return id === 'thread_1' || id === 'thread_2' || id === 'thread_3' || 
+           id.startsWith('thread_sample') || id === 'thread_bienvenida' ||
+           title.includes('pedroni') || title.includes('desparasitaci') || title.includes('bienvenida') ||
+           content.includes('collar rojo') || content.includes('cachorritos encontrados') ||
+           author.includes('maría fernández') || author.includes('maria fernandez') ||
+           author.includes('roberto v') || author.includes('voluntarios reserva');
+}
+
+function purgeMockForumThreads() {
+    try {
+        const saved = localStorage.getItem('reserva_forum_threads');
+        if (saved) {
+            const list = JSON.parse(saved);
+            if (Array.isArray(list)) {
+                const cleaned = list.filter(t => !isMockThread(t));
+                localStorage.setItem('reserva_forum_threads', JSON.stringify(cleaned));
+                return cleaned;
+            }
+        }
+    } catch (e) {
+        console.error("Error purging mock threads:", e);
+    }
+    return [];
+}
+
 let activeCategory = 'all';
 let searchQuery = '';
 let currentSort = 'recent';
@@ -26,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initForum() {
+    purgeMockForumThreads();
     setupFirebaseOrLocalListeners();
 }
 
@@ -34,71 +66,55 @@ let currentThreadsList = [];
 /* Dual Connectivity & Realtime Persistence */
 function setupFirebaseOrLocalListeners() {
     const container = document.getElementById('forum-threads-list');
-    if (container && typeof getPawLoaderHTML === 'function') {
-        container.innerHTML = getPawLoaderHTML('Cargando publicaciones del foro...');
+    if (container) {
+        if (typeof getLogoLoaderHTML === 'function') {
+            container.innerHTML = getLogoLoaderHTML('Cargando avisos de Perdidos y Encontrados...');
+        } else if (typeof getPawLoaderHTML === 'function') {
+            container.innerHTML = getPawLoaderHTML('Cargando avisos de Perdidos y Encontrados...');
+        }
     }
+
+    purgeMockForumThreads();
 
     if (typeof firebase !== 'undefined' && isFirebaseConfigured && db) {
         db.collection('forum_threads').orderBy('createdAt', 'desc').onSnapshot((snapshot) => {
             const threads = [];
             snapshot.forEach(doc => {
-                threads.push({ id: doc.id, ...doc.data() });
+                const threadObj = { id: doc.id, ...doc.data() };
+                if (!isMockThread(threadObj)) {
+                    threads.push(threadObj);
+                }
             });
             currentThreadsList = threads;
-            if (threads.length === 0) {
-                seedInitialForumThreads();
-            } else {
-                renderForum(currentThreadsList);
-            }
+            localStorage.setItem('reserva_forum_threads', JSON.stringify(threads));
+            renderForum(currentThreadsList);
         }, (error) => {
             console.warn("Error en Firestore listener. Usando almacenamiento local:", error);
             currentThreadsList = getLocalForumThreads();
             renderForum(currentThreadsList);
         });
     } else {
-        currentThreadsList = getLocalForumThreads();
-        renderForum(currentThreadsList);
-    }
-}
-
-function seedInitialForumThreads() {
-    const sampleThread = {
-        id: "thread_bienvenida",
-        title: "¡Bienvenidos al Foro Oficial de la Reserva Canina Gálvez!",
-        category: "general",
-        content: "Espacio creado para conversar sobre adopciones, tránsito, salud animal y voluntariado en nuestra ciudad de Gálvez. ¡Sumate a la comunidad!",
-        author: "Reserva Canina Gálvez",
-        authorEmail: "matiasschvbauer@gmail.com",
-        authorRole: "Administrador Reserva",
-        createdAt: new Date().toISOString(),
-        status: "approved",
-        likes: 5,
-        likedBy: [],
-        replies: [
-            {
-                id: "reply_1",
-                author: "Vecino/a de Gálvez",
-                content: "¡Excelente iniciativa! Muchas gracias por el trabajo que hacen por los callejeritos.",
-                createdAt: new Date().toISOString()
+        // Wait briefly for firebase to initialize before falling back
+        setTimeout(() => {
+            if (typeof firebase !== 'undefined' && isFirebaseConfigured && db) {
+                setupFirebaseOrLocalListeners();
+            } else {
+                currentThreadsList = getLocalForumThreads();
+                renderForum(currentThreadsList);
             }
-        ]
-    };
-    if (typeof firebase !== 'undefined' && isFirebaseConfigured && db) {
-        db.collection('forum_threads').doc(sampleThread.id).set(sampleThread).catch(e => console.warn("Seed thread error:", e));
+        }, 300);
     }
-    renderForum([sampleThread]);
 }
 
 function getLocalForumThreads() {
-    const saved = localStorage.getItem('reserva_forum_threads');
-    if (!saved) return INITIAL_THREADS;
-    try { return JSON.parse(saved); } catch (e) { return INITIAL_THREADS; }
+    return purgeMockForumThreads();
 }
 
 function saveLocalForumThreads(threads) {
-    localStorage.setItem('reserva_forum_threads', JSON.stringify(threads));
+    const cleanList = Array.isArray(threads) ? threads.filter(t => !isMockThread(t)) : [];
+    localStorage.setItem('reserva_forum_threads', JSON.stringify(cleanList));
     if (!isFirebaseConfigured) {
-        renderForum(threads);
+        renderForum(cleanList);
     }
 }
 
@@ -504,7 +520,7 @@ function createNewThread(event) {
             if (modResult.isFlagged) {
                 showToast('Tu publicación está EN REVISIÓN por el bot de moderación antes de hacerse pública.', 'warning');
             } else {
-                showToast('¡Hilo publicado con éxito en la nube de la Reserva!', 'success');
+                showToast('¡Hilo publicado con éxito en el Foro de la Asociación!', 'success');
             }
         }).catch(err => {
             showToast(`Error al guardar en Firebase: ${err.message}`, 'error');

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="js/mobile-detect.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Información - Asociación Civil Amigos de los Animales No Humanos</title>
+    <meta name="description" content="Conocé la historia, misión, voluntariado y labor de la Asociación Civil Amigos de los Animales No Humanos de Gálvez, Santa Fe.">
+    <link rel="icon" href="assets/img/cropped_circle_image.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mobile-styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body class="m-body">
+
+        <!-- ─── HEADER MÓVIL SUPERIOR ─── -->
+    <header class="m-header">
+        <div class="m-header-top">
+            <a href="m_index.html" class="m-logo-link">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="m-logo-badge">
+                <div class="m-logo-text">
+                    <span class="m-logo-main">ASOCIACIÓN CIVIL</span>
+                    <span class="m-logo-sub">AMIGOS DE LOS ANIMALES</span>
+                </div>
+            </a>
+
+            <div class="m-header-actions">
+                <a href="https://wa.me/5493404521246" target="_blank" class="m-header-btn m-btn-wa" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="m_donaciones.html" class="m-btn-pill-donar"><i class="fas fa-heart"></i> Aportar</a>
+                <button type="button" onclick="toggleMobileDrawer(true)" class="m-header-btn" title="Menú"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ─── DRAWER MENÚ LATERAL MÓVIL ─── -->
+    <div id="m-overlay" class="m-overlay"></div>
+    <aside id="m-drawer" class="m-drawer">
+        <div class="m-drawer-header">
+            <div class="m-drawer-header-brand">
+                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación">
+                <span class="m-drawer-header-title">MENÚ PRINCIPAL</span>
+            </div>
+            <button type="button" onclick="toggleMobileDrawer(false)" class="m-drawer-close" aria-label="Cerrar Menú">&times;</button>
+        </div>
+
+        <div class="m-drawer-body">
+            <ul class="m-drawer-menu">
+                <li class="m-drawer-item"><a href="m_index.html" class="m-drawer-link "><i class="fas fa-home"></i> Inicio</a></li>
+                
+                <li class="m-drawer-item">
+                    <a href="m_quienes-somos.html" class="m-drawer-link active"><i class="fas fa-info-circle"></i> Información</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_quienes-somos.html#sobre-nosotros" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Quiénes Somos</a></li>
+                        <li><a href="m_quienes-somos.html#documentos-legales" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Estatuto y Legal</a></li>
+                        <li><a href="m_quienes-somos.html#veterinarios" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Veterinarios</a></li>
+                        <li><a href="m_quienes-somos.html#faq" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Preguntas Frecuentes</a></li>
+                        <li><a href="m_quienes-somos.html#contacto" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_adopciones.html" class="m-drawer-link "><i class="fas fa-paw"></i> Adopta</a></li>
+                <li class="m-drawer-item"><a href="m_historias.html" class="m-drawer-link "><i class="fas fa-book-open"></i> Historias</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_final-feliz.html" class="m-drawer-link "><i class="fas fa-heart"></i> Final Feliz</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_final-feliz.html#adopciones-exitosas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Casos Adoptados</a></li>
+                        <li><a href="m_final-feliz.html#galeria-collage" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Galería y Collage</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item">
+                    <a href="m_cuidado-responsable.html" class="m-drawer-link "><i class="fas fa-shield-cat"></i> Cuidado Responsable</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_cuidado-responsable.html#pautas-cuidado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Guía y Consejos</a></li>
+                        <li><a href="m_cuidado-responsable.html#adopciones-felinas" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Adopciones Felinas</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Leyes y Denuncias</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_hacete-socio.html" class="m-drawer-link "><i class="fas fa-id-card"></i> Hacete Socio</a></li>
+
+                <li class="m-drawer-item">
+                    <a href="m_refugio.html" class="m-drawer-link "><i class="fas fa-hand-holding-heart"></i> Necesidades</a>
+                    <ul class="m-drawer-sublist">
+                        <li><a href="m_refugio.html#necesidades-hoy" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Urgentes de Hoy</a></li>
+                        <li><a href="m_refugio.html#insumos-permanentes" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Insumos Permanentes</a></li>
+                        <li><a href="m_refugio.html#voluntariado" class="m-drawer-sublink"><i class="fas fa-chevron-right"></i> Sumate al Equipo</a></li>
+                    </ul>
+                </li>
+
+                <li class="m-drawer-item"><a href="m_foro.html" class="m-drawer-link "><i class="fas fa-bullhorn"></i> Perdidos y Encontrados</a></li>
+                <li class="m-drawer-item"><a href="m_donaciones.html" class="m-drawer-link m-drawer-highlight "><i class="fas fa-hand-holding-dollar"></i> Cómo aportar</a></li>
+            </ul>
+        </div>
+
+        <div class="m-drawer-footer">
+            <button type="button" class="m-drawer-admin-btn" onclick="openModal('login-modal'); toggleMobileDrawer(false);">
+                <i class="fas fa-user-shield"></i> Acceso Administración
+            </button>
+            <div class="m-drawer-socials">
+                <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5493404521246" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </aside>
+<!-- PAGE HERO -->
+    <section style="background: linear-gradient(135deg, var(--primary), var(--primary-hover)); color:#fff; padding: 60px 0; text-align: center;">
+        <div class="container">
+            <span class="badge badge-secondary" style="margin-bottom: 12px;">Sobre Nosotros</span>
+            <h1 style="color:#fff; font-size: 2.5rem; margin-bottom: 10px;">Información de la Asociación Civil</h1>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">Nuestra historia, compromiso ético y la labor diaria que sostenemos junto a la comunidad de Gálvez.</p>
+        </div>
+    </section>
+
+    <!-- SUB-NAVIGATION PILLS -->
+    <nav class="subnav-pills-bar">
+        <div class="container">
+            <ul class="subnav-pills-list">
+                <li><a href="#sobre-nosotros" class="subnav-pill active"><i class="fas fa-landmark"></i> Sobre Nosotros</a></li>
+                <li><a href="#documentos-legales" class="subnav-pill"><i class="fas fa-file-contract"></i> Estatuto y Legal</a></li>
+                <li><a href="#veterinarios" class="subnav-pill"><i class="fas fa-user-doctor"></i> Veterinarios Gálvez</a></li>
+                <li><a href="#faq" class="subnav-pill"><i class="fas fa-circle-question"></i> Preguntas Frecuentes</a></li>
+                <li><a href="#contacto" class="subnav-pill"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" id="sobre-nosotros">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+                <div>
+                    <span class="badge badge-primary" style="margin-bottom: 15px;">Nuestra Historia</span>
+                    <h2 style="font-size: 2rem; margin-bottom: 20px;">Un espacio de protección, amor y esperanza en Gálvez</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 15px;">
+                        La <strong>Asociación Civil Amigos de los Animales No Humanos</strong> nació de la necesidad urgente de dar un espacio digno y seguro a decenas de perros y animales vulnerables, heridos o víctimas de maltrato en nuestra ciudad.
+                    </p>
+                    <p style="color: var(--text-muted); margin-bottom: 20px;">
+                        No funcionamos simplemente como un albergue temporal: acondicionamos caniles de descanso, áreas de esparcimiento verde, controles sanitarios estrictos, campañas de vacunación y promovemos la adopción consciente y el cuidado responsable.
+                    </p>
+                    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                        <div style="background: var(--primary-light); padding: 15px; border-radius: var(--radius-sm); flex: 1; min-width: 220px;">
+                            <h4 style="color: var(--primary); margin-bottom: 5px;"><i class="fas fa-bullseye"></i> Misión</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted);">Erradicar el abandono y maltrato animal en Gálvez a través de la castración masiva, la educación comunitaria y la adopción.</p>
+                        </div>
+                        <div style="background: var(--secondary-light); padding: 15px; border-radius: var(--radius-sm); flex: 1; min-width: 220px;">
+                            <h4 style="color: var(--secondary); margin-bottom: 5px;"><i class="fas fa-eye"></i> Visión</h4>
+                            <p style="font-size: 0.88rem; color: var(--text-muted);">Construir una comunidad donde cada animal no humano sea respetado, protegido y viva con una familia responsable.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <img src="assets/img/Portada info.png" alt="Animales en el refugio de la asociación" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); width: 100%; height: auto; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: LEGAL DOCUMENTS (ESTATUTO & CERTIFICADO DE SUBSISTENCIA) -->
+    <section class="section-padding bg-alt" id="documentos-legales">
+        <div class="container">
+            <div style="text-align: center; max-width: 700px; margin: 0 auto 30px auto;">
+                <span class="badge badge-secondary" style="margin-bottom: 10px;">Transparencia y Legalidad</span>
+                <h2 class="section-title">Estatuto y Documentación Oficial</h2>
+                <p class="section-subtitle">
+                    Ponemos a disposición pública los documentos legales de la Asociación Civil. Podés leerlos directamente online en la pantalla o descargarlos en formato PDF.
+                </p>
+            </div>
+
+            <div class="doc-cards-grid">
+                
+                <!-- CARD 1: ESTATUTO COMPLETO -->
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-card-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <span class="badge badge-primary" style="margin-bottom: 10px;">Personería Jurídica</span>
+                        <h3 class="doc-card-title">Estatuto Social Completo</h3>
+                        <p class="doc-card-desc">
+                            Documento fundacional y normativo de la <strong>Asociación Civil Amigos de los Animales No Humanos</strong>, donde constan sus objetivos éticos, derechos y deberes de socios, asambleas y estructura directiva.
+                        </p>
+                    </div>
+                    <div class="doc-card-actions">
+                        <button type="button" class="btn btn-secondary" onclick="openPdfViewer('ESTATUTO completo.pdf', 'Estatuto Completo de la Asociación Civil')">
+                            <i class="fas fa-eye"></i> Leer Online
+                        </button>
+                        <a href="ESTATUTO completo.pdf" download="ESTATUTO_completo_Asociacion_Civil.pdf" class="btn btn-outline">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD 2: CERTIFICADO DE SUBSISTENCIA -->
+                <div class="doc-card">
+                    <div>
+                        <div class="doc-card-icon" style="background: var(--primary-light); color: var(--primary);">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span class="badge badge-secondary" style="margin-bottom: 10px;">Vigencia Actualizada</span>
+                        <h3 class="doc-card-title">Certificado de Subsistencia 2026</h3>
+                        <p class="doc-card-desc">
+                            Certificado oficial emitido por la <strong>Inspección General de Personas Jurídicas</strong> que avala la plena vigencia institucional, regularidad administrativa y funcionamiento legal de la entidad.
+                        </p>
+                    </div>
+                    <div class="doc-card-actions">
+                        <button type="button" class="btn btn-primary" onclick="openPdfViewer('CERTIFICADO SUBSISTENCIA 2026.pdf', 'Certificado de Subsistencia Oficial 2026')">
+                            <i class="fas fa-eye"></i> Leer Online
+                        </button>
+                        <a href="CERTIFICADO SUBSISTENCIA 2026.pdf" download="CERTIFICADO_SUBSISTENCIA_2026.pdf" class="btn btn-outline">
+                            <i class="fas fa-download"></i> Descargar PDF
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: DIRECTORY OF VETERINARIANS IN GÁLVEZ -->
+    <section class="section-padding" id="veterinarios">
+        <div class="container">
+            <div style="text-align: center; max-width: 720px; margin: 0 auto 30px auto;">
+                <span class="badge badge-primary" style="margin-bottom: 10px;">Salud y Profesionales Locales</span>
+                <h2 class="section-title">Directorio de Veterinarios de Gálvez</h2>
+                <p class="section-subtitle">
+                    Clínicas y profesionales veterinarios de Gálvez a los que podés acudir ante urgencias, consultas médicas, vacunación y controles de tus compañeros de vida.
+                </p>
+            </div>
+
+                        <div class="vet-grid">
+
+                <!-- 1. AXIS CLÍNICA VETERINARIA -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Axis Clínica Veterinaria</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Av. 20 de Junio 511, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 3404 40-8188</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404408188" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404408188', '3404 40-8188', 'Axis Clínica Veterinaria')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 2. KÜMELEN - CLÍNICA DE ANIMALES -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Kümelen - Clínica de Animales</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Silvio Arcas 298, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 51-7740</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404517740" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404517740', '03404 51-7740', 'Kümelen - Clínica de Animales')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. VETERINARIA LA ESTRELLA -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Veterinaria La Estrella</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Echeverría 204, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 40-9679</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404409679" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404409679', '03404 40-9679', 'Veterinaria La Estrella')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. AGRO VETERINARIA TRAGGIAY -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Agro Veterinaria Traggiay</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Belgrano 894, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 51-7822</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404517822" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404517822', '03404 51-7822', 'Agro Veterinaria Traggiay')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 5. VETERINARIA CZERWENY -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Veterinaria Czerweny</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dorrego 366, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 63-2786</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404632786" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404632786', '03404 63-2786', 'Veterinaria Czerweny')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 6. AGROVETERINARIA FORNARI -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Agroveterinaria Fornari</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Belgrano 502, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 48-1107</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404481107" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404481107', '03404 48-1107', 'Agroveterinaria Fornari')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 7. CORAZÓN ANIMAL -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Corazón Animal</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Santiago de Liniers 1400, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 51-7890</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404517890" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404517890', '03404 51-7890', 'Corazón Animal')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 8. PANAMBI VETERINARIA -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Panambi Veterinaria</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>20 de Junio 803, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 03404 59-7860</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404597860" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404597860', '03404 59-7860', 'Panambi Veterinaria')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 9. PUPPIES SHOP -->
+                <div class="vet-card">
+                    <div>
+                        <div class="vet-header">
+                            <div class="vet-icon-badge"><i class="fas fa-user-doctor"></i></div>
+                            <div>
+                                <h3 class="vet-name">Puppies Shop</h3>
+                            </div>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Bartolomé Mitre 1287, Gálvez, Santa Fe</span>
+                        </div>
+                        <div class="vet-detail-line">
+                            <i class="fas fa-phone"></i>
+                            <span>Tel: 3404 539090</span>
+                        </div>
+                    </div>
+                    <div class="vet-actions">
+                        <a href="tel:+543404539090" class="btn btn-primary btn-sm vet-call-btn" onclick="return callVet(event, '+543404539090', '3404 539090', 'Puppies Shop')">
+                            <i class="fas fa-phone"></i> Llamar
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MAPA INTERACTIVO DE VETERINARIAS EN GÁLVEZ -->
+            <div id="veterinarios-mapa-wrap" style="margin-top: 45px; background: #ffffff; padding: 25px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color);">
+                <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px; margin-bottom: 20px;">
+                    <div>
+                        <span class="badge badge-primary" style="margin-bottom: 6px;"><i class="fas fa-map-location-dot"></i> Ubicaciones en Gálvez</span>
+                        <h3 style="margin: 0; font-size: 1.35rem; color: var(--primary);">Mapa de Veterinarias</h3>
+                        <p style="margin: 4px 0 0 0; color: var(--text-muted); font-size: 0.9rem;">Pasá el mouse por arriba de cualquier marcador para ver cuál es o hacé clic para llamar.</p>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 12px; font-size: 0.85rem; color: var(--text-muted);">
+                        <span style="display: inline-flex; align-items: center; gap: 6px;"><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background: #174A4A;"></span> 9 Veterinarias registradas</span>
+                    </div>
+                </div>
+                <div id="vets-map" style="width: 100%; height: 460px; border-radius: var(--radius-md); border: 1px solid var(--border-color); z-index: 1;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS -->
+    <section class="section-padding bg-alt" id="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes (FAQ)</h2>
+            <p class="section-subtitle">Aclaramos las dudas más habituales de vecinos y colaboradores.</p>
+
+            <div style="max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+                <div style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 8px;"><i class="fas fa-question-circle"></i> ¿Puedo visitar el refugio de la Asociación?</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">¡Sí! Coordinamos visitas los fines de semana para que vecinos y familias puedan pasear animales, colaborar en las rutinas de higiene o conocer a su futuro integrante de familia.</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 8px;"><i class="fas fa-question-circle"></i> ¿Cuáles son los requisitos de adopción?</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Ser mayor de edad, contar con patio o espacio seguro cerrado en la vivienda, asumir el compromiso de vacunación y control veterinario anual, y firmar el contrato de adopción responsable.</p>
+                </div>
+                <div style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+                    <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 8px;"><i class="fas fa-question-circle"></i> ¿Cómo se financia la Asociación?</h3>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">La Asociación Civil se sostiene mediante la solidaridad de los vecinos de Gálvez: donaciones mensuales de socios, aportes vía alias/Mercado Pago, rifas benéficas y colectas de alimento balanceado y materiales reciclables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTEGRATED CONTACT SECTION -->
+    <section class="section-padding" id="contacto">
+        <div class="container">
+            <div style="text-align: center; max-width: 680px; margin: 0 auto 35px auto;">
+                <span class="badge badge-secondary" style="margin-bottom: 10px;">Vías de Comunicación</span>
+                <h2 class="section-title">Contactate con la Asociación</h2>
+                <p class="section-subtitle">
+                    Envianos tu mensaje, consulta sobre adopciones o coordiná una visita al refugio en Gálvez.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+                
+                <!-- Contact Info Column -->
+                <div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 15px; color: var(--primary);">Información de Contacto</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 25px; line-height: 1.6;">
+                        Podés comunicarte directamente a través de nuestras redes oficiales o enviarnos un mensaje completando el formulario.
+                    </p>
+
+                    <div style="display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px;">
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--primary-light); color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <strong>Ubicación:</strong>
+                                <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">Gálvez, Provincia de Santa Fe, Argentina</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--secondary-light); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                <i class="fab fa-facebook-f"></i>
+                            </div>
+                            <div>
+                                <strong>Facebook:</strong>
+                                <p style="margin: 0;"><a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">Asociación Civil Amigos de los Animales No Humanos</a></p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 16px;">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--accent-light); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 1.25rem;">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <strong>Instagram Oficial:</strong>
+                                <p style="margin: 0;"><a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 600;">@reservacaninagalvez</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Column -->
+                <div style="background: var(--bg-card); padding: 32px; border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm);">
+                    <h3 style="margin-bottom: 8px; color: var(--text-main);">Envianos tu Consulta</h3>
+                    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 20px;">Elegí el motivo y completá tus datos. Se armará una nota automática que podés personalizar.</p>
+                    
+                    <form id="association-contact-form" onsubmit="handleContactFormSubmit(event)">
+                        
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label class="form-label" style="display: block; margin-bottom: 6px; font-weight: 700; color: var(--text-main);">
+                                <i class="fas fa-tag" style="color: var(--secondary);"></i> Motivo de contacto <span style="color: #c62828;">*</span>:
+                            </label>
+                            <select id="contact-subject" class="form-control" style="font-weight: 600;" required onchange="handleContactSubjectChange()">
+                                <option value="General" selected>General</option>
+                                <option value="Donar">Donar</option>
+                                <option value="Adoptar un 4 patas">Adoptar un 4 patas</option>
+                                <option value="Ser voluntario">Ser voluntario</option>
+                                <option value="Dar transito">Dar tránsito</option>
+                            </select>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;">
+                            <div class="form-group">
+                                <label class="form-label" style="display: block; margin-bottom: 6px; font-weight: 700; color: var(--text-main);">
+                                    <i class="fas fa-user" style="color: var(--secondary);"></i> Nombre y Apellido <span style="color: #c62828;">*</span>:
+                                </label>
+                                <input type="text" id="contact-fullname" class="form-control" placeholder="Ej: Juan Pérez" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" style="display: block; margin-bottom: 6px; font-weight: 700; color: var(--text-main);">
+                                    <i class="fas fa-phone" style="color: var(--secondary);"></i> Celular <span style="color: #c62828;">*</span>:
+                                </label>
+                                <input type="tel" id="contact-phone" class="form-control" placeholder="Ej: 3404-123456" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label class="form-label" style="display: block; margin-bottom: 6px; font-weight: 700; color: var(--text-main);">
+                                <i class="fas fa-envelope" style="color: var(--secondary);"></i> Correo Electrónico (Mail) <span style="color: #c62828;">*</span>:
+                            </label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="Ej: juanperez@gmail.com" required>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 22px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+                                <label class="form-label" style="font-weight: 700; color: var(--text-main); margin: 0;">
+                                    <i class="fas fa-comment-dots" style="color: var(--secondary);"></i> Nota sobre lo que querés hablar <span style="color: #c62828;">*</span>:
+                                </label>
+                                <small style="color: var(--text-muted); font-size: 0.78rem;">(Podés personalizarla)</small>
+                            </div>
+                            <textarea id="contact-note" class="form-control" rows="5" placeholder="Escribí aquí tu mensaje..." required></textarea>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 13px; font-weight: 700; font-size: 0.98rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Enviar Mensaje por WhatsApp
+                            </button>
+                            <button type="button" onclick="sendContactByEmail()" class="btn btn-outline" style="width: 100%; padding: 11px; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                                <i class="fas fa-envelope"></i> Enviar por Correo Electrónico
+                            </button>
+                        </div>
+
+                        <p style="color: var(--text-muted); font-size: 0.78rem; text-align: center; margin-top: 14px; margin-bottom: 0;">
+                            <i class="fas fa-check-circle" style="color: #2e7d32;"></i> Todos los campos son obligatorios para poder brindarte una respuesta personalizada.
+                        </p>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN FOOTER -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="logo-brand" style="margin-bottom: 16px; display: flex; align-items: center; gap: 16px;">
+                        <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="logo-img-circle" style="background: white; padding: 2px; margin-right: 14px; flex-shrink: 0;">
+                        <div class="logo-title">
+                            <span class="logo-main-text" style="color: #fff; font-weight: 700;">ASOCIACIÓN CIVIL</span>
+                            <span class="logo-sub-text" style="color: #8FA58A; font-size: 0.8rem;">AMIGOS DE LOS ANIMALES</span>
+                        </div>
+                    </div>
+                    <p>Asociación civil sin fines de lucro dedicada a la protección, rescate, castración masiva y adopción responsable de animales no humanos en la ciudad de Gálvez, Santa Fe.</p>
+                </div>
+                <div>
+                    <h4 class="footer-title">Navegación</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_index.html">Inicio</a></li>
+                        <li><a href="m_quienes-somos.html">Información</a></li>
+                        <li><a href="m_adopciones.html">Adopta</a></li>
+                        <li><a href="m_historias.html">Historias</a></li>
+                        <li><a href="m_final-feliz.html">Final Feliz</a></li>
+                        <li><a href="m_refugio.html">Necesidades</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Comunidad</h4>
+                    <ul class="footer-links">
+                        <li><a href="m_cuidado-responsable.html">Cuidado Responsable</a></li>
+                        <li><a href="m_hacete-socio.html">Hacete Socio</a></li>
+                        <li><a href="m_cuidado-responsable.html#leyes">Leyes y Denuncias</a></li>
+                        <li><a href="m_foro.html">Perdidos y Encontrados</a></li>
+                        <li><a href="m_donaciones.html">Cómo aportar</a></li>
+                        <li><a href="m_quienes-somos.html#contacto">Contacto</a></li>
+                        </ul>
+                </div>
+                <div>
+                    <h4 class="footer-title">Redes Sociales</h4>
+                    <p style="color: #a3b3a3; font-size: 0.9rem; margin-bottom: 15px;">Seguinos para ver los rescates diarios:</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/ReservaCaninaGalvezFanPage/?locale=es_LA" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/reservacaninagalvez/?hl=es" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                <p style="margin: 0;">&copy; 2026 Asociación Civil Amigos de los Animales No Humanos. Gálvez, Santa Fe. Desarrollado por <a href="https://matiasschvabauer.site/" target="_blank">Schvabauer Matias</a>.</p>
+                <div class="footer-admin-slot">
+                    <a href="#" onclick="openModal('login-modal'); return false;" class="footer-admin-link" style="color: #8FA58A; font-size: 0.8rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+                        <i class="fas fa-lock"></i> Acceso Exclusivo Administración
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Firebase App & Auth SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    
+    <script src="js/firebase-config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin-bar.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="js/main.js"></script>
+
+    <!-- ─── BOTÓN FLOTANTE WHATSAPP ─── -->
+    <a href="https://wa.me/5493404521246" class="m-floating-wa" target="_blank" title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ─── NAVEGACIÓN INFERIOR FIJA MÓVIL ─── -->
+    <nav class="m-bottom-nav">
+        <a href="m_index.html" class="m-nav-item ">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="m_adopciones.html" class="m-nav-item ">
+            <i class="fas fa-paw"></i>
+            <span>Adopta</span>
+        </a>
+        <a href="m_final-feliz.html" class="m-nav-item ">
+            <i class="fas fa-heart"></i>
+            <span>Final Feliz</span>
+        </a>
+        <a href="m_foro.html" class="m-nav-item ">
+            <i class="fas fa-bullhorn"></i>
+            <span>Perdidos</span>
+        </a>
+        <button type="button" onclick="toggleMobileDrawer(true)" class="m-nav-item">
+            <i class="fas fa-bars"></i>
+            <span>Menú</span>
+        </button>
+    </nav>
+
+    <script src="js/mobile-app.js"></script>
+
+</body>
+</html>
