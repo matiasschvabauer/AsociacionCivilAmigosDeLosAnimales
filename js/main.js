@@ -633,11 +633,11 @@ const VETS_DATA = [
     },
     {
         name: "Puppies Shop",
-        address: "Bartolomé Mitre 1287, Gálvez, Santa Fe",
+        address: "Mitre 1287, Gálvez, Santa Fe",
         phone: "3404 539090",
         phoneClean: "+543404539090",
-        lat: -32.0340354,
-        lng: -61.2261401
+        lat: -32.0215709,
+        lng: -61.2249127
     }
 ];
 

@@ -112,7 +112,8 @@ body.m-body {
     text-decoration: none;
 }
 
-.m-header-btn:hover, .m-header-btn:active {
+.m-header-btn:hover,
+.m-header-btn:active {
     background: var(--primary-light);
 }
 
@@ -261,7 +262,9 @@ body.m-body {
     text-align: center;
 }
 
-.m-drawer-link:hover, .m-drawer-link:active, .m-drawer-link.active {
+.m-drawer-link:hover,
+.m-drawer-link:active,
+.m-drawer-link.active {
     background: var(--primary-light);
     color: var(--primary);
     font-weight: 700;
@@ -466,14 +469,21 @@ body.m-body {
 }
 
 /* ─── Ajustes de Grilla Móvil (1 Sola Columna Clara) ─── */
-.grid, .grid-2, .grid-3, .grid-4 {
+.grid,
+.grid-2,
+.grid-3,
+.grid-4 {
     display: grid !important;
     grid-template-columns: 1fr !important;
     gap: 20px !important;
 }
 
 /* ─── Tarjetas Móviles Adaptadas ─── */
-.card, .dog-card, .final-feliz-card, .historia-card, .forum-thread-card {
+.card,
+.dog-card,
+.final-feliz-card,
+.historia-card,
+.forum-thread-card {
     border-radius: var(--radius-md) !important;
     overflow: hidden !important;
     background: #ffffff !important;
@@ -676,7 +686,8 @@ body.m-body.home-page-layout .home-carousel-wrapper {
     transition: all 0.15s ease;
 }
 
-.m-drawer-sublink:hover, .m-drawer-sublink:active {
+.m-drawer-sublink:hover,
+.m-drawer-sublink:active {
     color: var(--primary);
     font-weight: 700;
     padding-left: 16px;
@@ -685,4 +696,613 @@ body.m-body.home-page-layout .home-carousel-wrapper {
 .m-drawer-sublink i {
     font-size: 0.72rem;
     color: var(--secondary);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   AJUSTES INTEGRALES DE ESTRUCTURA Y TAMAÑOS MÓVIL
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* 1. HOME CAROUSEL OPTIMIZATION */
+.home-carousel-wrapper {
+    padding-top: 12px !important;
+    min-height: auto !important;
+    position: relative !important;
+}
+
+/* Ocultar flechas gigantes que tapaban botones centrales en celular */
+.carousel-arrow-btn {
+    display: none !important;
+}
+
+.carousel-slides-container {
+    min-height: 520px !important;
+    position: relative !important;
+}
+
+.carousel-slide {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    padding: 6px 0 16px 0 !important;
+}
+
+.carousel-slide-inner {
+    padding: 0 12px !important;
+}
+
+/* Slide 0: Institucional Hero Card */
+.hero-asoc-card {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 18px 14px !important;
+    gap: 12px !important;
+    min-height: auto !important;
+    border-radius: var(--radius-md) !important;
+    background: linear-gradient(135deg, #174A4A 0%, #103636 100%) !important;
+}
+
+.hero-asoc-text {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.hero-asoc-tag {
+    font-size: 0.72rem !important;
+    padding: 4px 10px !important;
+    margin-bottom: 8px !important;
+    display: inline-flex !important;
+}
+
+.hero-asoc-title {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 10px !important;
+    color: #ffffff !important;
+}
+
+.hero-asoc-desc {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 14px !important;
+    opacity: 0.95 !important;
+}
+
+.hero-asoc-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+}
+
+.hero-asoc-actions .btn {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    font-size: 0.86rem !important;
+    justify-content: center !important;
+    margin: 0 !important;
+}
+
+.hero-asoc-img-col {
+    width: 100% !important;
+    margin-top: 8px !important;
+}
+
+.hero-asoc-img {
+    width: 100% !important;
+    height: 165px !important;
+    object-fit: cover !important;
+    border-radius: 10px !important;
+    display: block !important;
+}
+
+/* Slide 1: 4 Mini Cards en cuadrícula 2x2 */
+.destacados-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    margin-top: 14px !important;
+}
+
+.destacado-mini-card {
+    border-radius: 10px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+.destacado-mini-img-wrap {
+    height: 110px !important;
+    position: relative !important;
+}
+
+.destacado-mini-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+.destacado-mini-content {
+    padding: 8px !important;
+}
+
+.destacado-mini-content h3 {
+    font-size: 0.92rem !important;
+    margin: 0 !important;
+}
+
+.destacado-mini-content p {
+    font-size: 0.74rem !important;
+    line-height: 1.3 !important;
+    margin: 4px 0 6px 0 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.destacado-mini-content .btn {
+    padding: 5px 6px !important;
+    font-size: 0.74rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+/* Slide 2: Urgentes y Necesidades */
+.urgente-slide-card {
+    padding: 18px 14px !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.urgente-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+}
+
+.urgente-pills-row {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+}
+
+.urgente-pills-row>div {
+    padding: 10px 8px !important;
+    font-size: 0.78rem !important;
+}
+
+/* Bottom Indicators bar */
+.carousel-bottom-bar {
+    padding: 6px 10px !important;
+    gap: 6px !important;
+}
+
+.carousel-indicators-group {
+    gap: 6px !important;
+    padding-bottom: 2px !important;
+}
+
+.carousel-indicator-tab {
+    padding: 5px 10px !important;
+    font-size: 0.72rem !important;
+    border-radius: 20px !important;
+    flex-shrink: 0 !important;
+}
+
+
+/* 2. SOBRE NOSOTROS (HISTORIA + MISIÓN Y VISIÓN) */
+.about-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+}
+
+.about-hero-grid img {
+    width: 100% !important;
+    height: 210px !important;
+    object-fit: cover !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin-top: 10px !important;
+}
+
+.mision-vision-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    margin-top: 16px !important;
+}
+
+.mision-vision-grid>div {
+    min-width: 0 !important;
+    padding: 12px 10px !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.mision-vision-grid h4 {
+    font-size: 0.90rem !important;
+    margin-bottom: 4px !important;
+}
+
+.mision-vision-grid p {
+    font-size: 0.75rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+}
+
+
+/* 3. VETERINARIOS: 2 POR FILA */
+.vet-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+}
+
+.vet-card {
+    padding: 12px 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    min-height: 180px !important;
+    border-radius: var(--radius-md) !important;
+    box-sizing: border-box !important;
+}
+
+.vet-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    margin-bottom: 6px !important;
+}
+
+.vet-icon-badge {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.88rem !important;
+}
+
+.vet-name {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+}
+
+.vet-detail-line {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+    gap: 5px !important;
+    margin-bottom: 3px !important;
+}
+
+.vet-detail-line i {
+    font-size: 0.76rem !important;
+}
+
+.vet-actions {
+    margin-top: 8px !important;
+}
+
+.vet-call-btn {
+    padding: 6px 8px !important;
+    font-size: 0.78rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+#veterinarios-mapa-wrap {
+    padding: 14px 12px !important;
+    margin-top: 25px !important;
+    border-radius: var(--radius-md) !important;
+}
+
+#vets-map {
+    height: 340px !important;
+}
+
+
+/* 4. CONTACTO: 100% VISIBLE Y APILADO */
+.contact-section-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 25px !important;
+    width: 100% !important;
+}
+
+.contact-form-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 20px 14px !important;
+    box-sizing: border-box !important;
+    border-radius: var(--radius-md) !important;
+    margin: 0 !important;
+}
+
+.contact-form-wrap form {
+    width: 100% !important;
+}
+
+.contact-form-wrap .form-control {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    font-size: 0.90rem !important;
+}
+
+.contact-form-wrap button,
+.contact-form-wrap .btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    justify-content: center !important;
+}
+
+
+/* 5. ADOPCIONES: CUADRÍCULA 2 POR FILA */
+.dogs-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+}
+
+.dog-card {
+    display: flex !important;
+    flex-direction: column !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+}
+
+.dog-card-img-wrapper {
+    height: 135px !important;
+}
+
+.dog-card-body {
+    padding: 10px 8px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 !important;
+}
+
+.dog-name {
+    font-size: 0.95rem !important;
+}
+
+.dog-tags {
+    gap: 4px !important;
+    margin: 4px 0 6px 0 !important;
+}
+
+.dog-tag-item {
+    font-size: 0.68rem !important;
+    padding: 2px 5px !important;
+}
+
+.dog-description {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    margin-bottom: 8px !important;
+}
+
+.dog-card .btn {
+    margin-top: auto !important;
+    padding: 6px 6px !important;
+    font-size: 0.74rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+
+/* 6. FINAL FELIZ: 2 POR FILA */
+.final-feliz-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+}
+
+.final-feliz-card {
+    padding: 10px !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.final-feliz-media {
+    height: 135px !important;
+    border-radius: var(--radius-sm) !important;
+}
+
+.final-feliz-title {
+    font-size: 0.95rem !important;
+}
+
+.final-feliz-excerpt {
+    font-size: 0.75rem !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}
+
+.collage-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    grid-auto-rows: 140px !important;
+    gap: 8px !important;
+}
+
+
+/* 7. REFUGIO (NECESIDADES): 2 POR FILA EN INSUMOS */
+.needs-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+}
+
+.need-card {
+    padding: 12px 10px !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.need-card h3 {
+    font-size: 0.88rem !important;
+}
+
+.need-card p {
+    font-size: 0.74rem !important;
+}
+
+
+/* 8. CUIDADO RESPONSABLE: 2 POR FILA EN GUÍAS */
+.guides-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+}
+
+.guide-card {
+    padding: 12px 10px !important;
+    border-radius: var(--radius-md) !important;
+}
+
+.guide-card h3 {
+    font-size: 0.88rem !important;
+}
+
+.guide-card p {
+    font-size: 0.74rem !important;
+}
+
+/* Extra refinements for mobile carousel, pill items, and responsive spacing */
+.home-carousel-wrapper {
+    padding-top: 18px !important;
+    margin-top: 0 !important;
+}
+
+.carousel-slide {
+    padding-top: 8px !important;
+}
+
+.urgente-pills-list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-top: 10px !important;
+}
+
+.urgente-pill-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 9px 12px !important;
+    border-radius: 10px !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.urgente-pill-item strong {
+    font-size: 0.86rem !important;
+}
+
+.urgente-pill-item div {
+    font-size: 0.74rem !important;
+}
+
+.urgente-slide-card h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+    margin: 4px 0 8px 0 !important;
+}
+
+.urgente-slide-card p {
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 12px !important;
+}
+
+.urgente-slide-card .btn {
+    width: 100% !important;
+    padding: 9px 12px !important;
+    font-size: 0.84rem !important;
+    justify-content: center !important;
+}
+
+.destacados-header h2 {
+    font-size: 1.35rem !important;
+    line-height: 1.25 !important;
+}
+
+.destacados-header p {
+    font-size: 0.82rem !important;
+}
+
+.destacados-header .btn {
+    display: none !important;
+    /* El botón Ver Todos ya está disponible en la barra y en Adopta */
+}
+
+.foro-features-grid,
+.socio-features-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+}
+
+.foro-feat-card,
+.socio-benefit-box {
+    padding: 12px !important;
+}
+
+
+.voluntariado-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+}
+
+.refugio-carousel-box {
+    height: 240px !important;
+    margin-top: 15px !important;
+}
+
+.contact-two-cols {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+}
+
+/* FINAL FELIZ COMPACT MOBILE CARDS */
+.final-feliz-grid article {
+    border-radius: var(--radius-md) !important;
+    overflow: hidden !important;
+}
+
+.final-feliz-grid article>div:last-child {
+    padding: 12px 10px !important;
+}
+
+.final-feliz-grid article h3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 3px !important;
+}
+
+.final-feliz-grid article p {
+    font-size: 0.74rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 8px !important;
+}
+
+.final-feliz-grid article button,
+.final-feliz-grid article .btn {
+    padding: 6px 4px !important;
+    font-size: 0.72rem !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    word-break: break-word !important;
+}
+
+.final-feliz-grid article>div:first-child {
+    height: 150px !important;
 }
