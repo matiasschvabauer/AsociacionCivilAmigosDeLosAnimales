@@ -1306,3 +1306,853 @@ body.m-body.home-page-layout .home-carousel-wrapper {
 .final-feliz-grid article>div:first-child {
     height: 150px !important;
 }
+
+/* ==========================================================================
+   MOBILE HEADER: PC-STYLE FULLY REVEALED LOGO
+   ========================================================================== */
+.m-header {
+    height: 60px !important;
+}
+
+.m-header-top {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0.35rem 0.75rem !important;
+    height: 60px !important;
+    gap: 8px !important;
+}
+
+.m-logo-pc-style {
+    display: inline-flex !important;
+    align-items: center !important;
+    text-decoration: none !important;
+    padding: 0 !important;
+    background: transparent !important;
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+}
+
+.m-logo-pc-style .logo-symbol-img {
+    height: 38px !important;
+    width: auto !important;
+    aspect-ratio: 486 / 326 !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    transform: none !important;
+}
+
+.m-logo-pc-style .logo-reveal-group {
+    display: flex !important;
+    align-items: center !important;
+    max-width: none !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+    transform: none !important;
+    white-space: nowrap !important;
+}
+
+.m-logo-pc-style .logo-divider-bar {
+    display: inline-block !important;
+    width: 2px !important;
+    height: 32px !important;
+    background: var(--primary) !important;
+    margin: 0 8px 0 8px !important;
+    border-radius: 999px !important;
+    transform: scaleY(1) !important;
+    flex-shrink: 0 !important;
+}
+
+.m-logo-pc-style .logo-text-details {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    line-height: 1.15 !important;
+}
+
+.m-logo-pc-style .logo-text-title {
+    font-size: 0.66rem !important;
+    font-weight: 800 !important;
+    color: var(--primary) !important;
+    letter-spacing: 0.2px !important;
+    text-transform: uppercase !important;
+    font-family: var(--font-heading) !important;
+}
+
+.m-logo-pc-style .logo-text-subtitle {
+    font-size: 0.53rem !important;
+    font-weight: 700 !important;
+    color: var(--secondary) !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+}
+
+.m-logo-pc-style .logo-text-num {
+    font-size: 0.46rem !important;
+    font-weight: 600 !important;
+    color: var(--text-muted) !important;
+    letter-spacing: 0.2px !important;
+}
+
+.m-header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 7px !important;
+    flex-shrink: 0 !important;
+}
+
+.m-header-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.95rem !important;
+}
+
+.m-btn-pill-donar {
+    padding: 6px 10px !important;
+    font-size: 0.78rem !important;
+    gap: 5px !important;
+}
+
+/* ==========================================================================
+   REMOVAL OF BOTTOM NAV BAR & FULL SCREEN ADJUSTMENT
+   ========================================================================== */
+body.m-body {
+    padding-bottom: 0 !important;
+}
+
+.m-bottom-nav {
+    display: none !important;
+}
+
+.m-floating-wa {
+    bottom: 20px !important;
+}
+
+/* ==========================================================================
+   MOBILE HOME CAROUSEL: 100% PC ESSENCE & METICULOUS CELLULAR STRUCTURE
+   ========================================================================== */
+body.m-body.home-page-layout {
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    background-color: #F7F3EA !important;
+}
+
+body.m-body.home-page-layout .home-carousel-wrapper {
+    min-height: calc(100vh - 56px) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    padding: 8px 10px 10px 10px !important;
+    box-sizing: border-box !important;
+    background: #F7F3EA !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+.carousel-slides-container {
+    flex: 1 1 auto !important;
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 540px !important;
+    padding: 4px 0 !important;
+}
+
+.carousel-slide {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: none !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    padding: 0 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.carousel-slide.active {
+    display: flex !important;
+    opacity: 1 !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.carousel-slide-inner {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+/* Card Base */
+.m-hero-card,
+.m-content-card {
+    width: 100% !important;
+    border-radius: 18px !important;
+    padding: 16px 14px !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 8px 24px rgba(23, 74, 74, 0.10) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+/* Dark Green Hero Theme (Slide 0 & Slide 2) */
+.m-hero-card {
+    background: linear-gradient(145deg, #174A4A 0%, #103636 100%) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.m-hero-urgente {
+    border-left: 5px solid #e9c46a !important;
+}
+
+/* Crisp Clean Card Theme (Slide 1, 3, 4) */
+.m-content-card {
+    background: #ffffff !important;
+    color: var(--text-main) !important;
+    border: 1px solid rgba(23, 74, 74, 0.10) !important;
+}
+
+/* Top Badge Pill */
+.m-card-top-tag {
+    margin-bottom: 6px !important;
+}
+
+.m-badge-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    padding: 3px 10px !important;
+    border-radius: 20px !important;
+    font-size: 0.70rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+}
+
+.m-badge-gold {
+    background: #e9c46a !important;
+    color: #174A4A !important;
+}
+
+.m-badge-secondary {
+    background: rgba(201, 101, 69, 0.12) !important;
+    color: var(--secondary) !important;
+}
+
+.m-badge-primary {
+    background: rgba(23, 74, 74, 0.10) !important;
+    color: var(--primary) !important;
+}
+
+/* Hero Typography */
+.m-hero-title {
+    font-size: 1.25rem !important;
+    line-height: 1.20 !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin: 0 0 5px 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: -0.2px !important;
+}
+
+.m-hero-title-highlight {
+    font-size: 1.10rem !important;
+    color: #e9c46a !important;
+    display: block !important;
+    margin-top: 1px !important;
+}
+
+.m-hero-desc {
+    font-size: 0.80rem !important;
+    line-height: 1.40 !important;
+    color: rgba(255, 255, 255, 0.90) !important;
+    margin: 0 0 8px 0 !important;
+}
+
+/* Content Card Typography */
+.m-section-title {
+    font-size: 1.22rem !important;
+    line-height: 1.22 !important;
+    font-weight: 800 !important;
+    color: var(--primary) !important;
+    margin: 0 0 3px 0 !important;
+}
+
+.m-section-desc {
+    font-size: 0.78rem !important;
+    line-height: 1.38 !important;
+    color: var(--text-muted) !important;
+    margin: 0 0 8px 0 !important;
+}
+
+/* Hero Image Box */
+.m-hero-img-box {
+    width: 100% !important;
+    max-height: 155px !important;
+    min-height: 120px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    margin: 2px 0 10px 0 !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+}
+
+.m-hero-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+/* Button Stacks */
+.m-card-btn-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+}
+
+.m-btn-touch {
+    padding: 9px 12px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    border-radius: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 7px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+.m-btn-outline-white {
+    color: #ffffff !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    background: transparent !important;
+}
+
+/* Slide 1: Dogs 2x2 Grid */
+.m-dogs-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 7px !important;
+    width: 100% !important;
+    margin: 2px 0 6px 0 !important;
+}
+
+.m-dog-card-item {
+    background: #F7F3EA !important;
+    border: 1px solid rgba(23, 74, 74, 0.08) !important;
+    border-radius: 11px !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03) !important;
+}
+
+.m-dog-thumb-wrap {
+    position: relative !important;
+    width: 100% !important;
+    height: 68px !important;
+    overflow: hidden !important;
+}
+
+.m-dog-thumb {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.m-dog-tag {
+    position: absolute !important;
+    top: 4px !important;
+    right: 4px !important;
+    padding: 1px 5px !important;
+    border-radius: 8px !important;
+    font-size: 0.52rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.tag-urgent {
+    background: #c62828 !important;
+}
+
+.tag-avail {
+    background: var(--primary) !important;
+}
+
+.m-dog-details {
+    padding: 4px 6px 5px 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.2 !important;
+}
+
+.m-dog-name {
+    font-size: 0.80rem !important;
+    color: var(--primary) !important;
+}
+
+.m-dog-sub {
+    font-size: 0.65rem !important;
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+}
+
+.m-dog-desc {
+    font-size: 0.62rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 1px !important;
+}
+
+/* Slide 2: Urgente Pills Stack */
+.m-pills-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin: 4px 0 8px 0 !important;
+}
+
+.m-pill-row {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-radius: 11px !important;
+    padding: 7px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+}
+
+.m-pill-icon-box {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 8px !important;
+    background: rgba(233, 196, 106, 0.22) !important;
+    color: #e9c46a !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.90rem !important;
+    flex-shrink: 0 !important;
+}
+
+.m-pill-text-col {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.2 !important;
+}
+
+.m-pill-title {
+    font-size: 0.80rem !important;
+    color: #ffffff !important;
+}
+
+.m-pill-sub {
+    font-size: 0.66rem !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* Slide 3: Foro Feature Rows */
+.m-features-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin: 4px 0 8px 0 !important;
+}
+
+.m-feature-row {
+    background: #F7F3EA !important;
+    border: 1px solid rgba(23, 74, 74, 0.08) !important;
+    border-radius: 11px !important;
+    padding: 7px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.m-feat-icon-box {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.90rem !important;
+    flex-shrink: 0 !important;
+}
+
+.m-feat-text-col {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.2 !important;
+}
+
+.m-feat-title {
+    font-size: 0.80rem !important;
+    color: var(--primary) !important;
+}
+
+.m-feat-sub {
+    font-size: 0.66rem !important;
+    color: var(--text-muted) !important;
+}
+
+/* Slide 4: Socio Stacked Cards */
+.m-socio-cards-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+    width: 100% !important;
+    margin: 4px 0 4px 0 !important;
+}
+
+.m-socio-item-box {
+    background: #F7F3EA !important;
+    border: 1px solid rgba(23, 74, 74, 0.08) !important;
+    border-radius: 12px !important;
+    padding: 8px 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.m-socio-item-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+.m-socio-item-icon {
+    width: 28px !important;
+    height: 28px !important;
+    border-radius: 7px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.85rem !important;
+    flex-shrink: 0 !important;
+}
+
+.m-socio-item-title-col {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.15 !important;
+}
+
+.m-socio-item-title {
+    font-size: 0.80rem !important;
+    color: var(--primary) !important;
+}
+
+.m-socio-item-badge-text {
+    font-size: 0.65rem !important;
+    color: var(--text-muted) !important;
+    font-weight: 600 !important;
+}
+
+.m-socio-item-copy {
+    font-size: 0.68rem !important;
+    color: var(--text-muted) !important;
+    line-height: 1.30 !important;
+    margin: 0 !important;
+}
+
+.m-btn-touch-sm {
+    padding: 6px 10px !important;
+    font-size: 0.74rem !important;
+    border-radius: 8px !important;
+    width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+}
+
+/* ==========================================================================
+   CAROUSEL BOTTOM BAR & COMPACT TABS
+   ========================================================================== */
+.carousel-bottom-bar {
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    padding: 6px 0 0 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.carousel-indicators-group {
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 3px !important;
+    width: 100% !important;
+    overflow-x: visible !important;
+}
+
+.carousel-indicator-tab {
+    flex: 1 1 0 !important;
+    padding: 5px 2px !important;
+    font-size: 0.66rem !important;
+    font-weight: 700 !important;
+    border-radius: 7px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 3px !important;
+    background: rgba(23, 74, 74, 0.08) !important;
+    color: var(--primary) !important;
+    border: 1px solid rgba(23, 74, 74, 0.1) !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+}
+
+.carousel-indicator-tab i {
+    font-size: 0.70rem !important;
+}
+
+.carousel-indicator-tab.active {
+    background: var(--primary) !important;
+    color: #ffffff !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 2px 8px rgba(23, 74, 74, 0.25) !important;
+}
+
+.carousel-timer-status {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    font-size: 0.65rem !important;
+    color: var(--text-muted) !important;
+    gap: 8px !important;
+}
+
+.carousel-progress-track {
+    flex: 1 1 auto !important;
+    height: 3px !important;
+    background: rgba(23, 74, 74, 0.1) !important;
+    border-radius: 999px !important;
+    overflow: hidden !important;
+}
+
+.carousel-progress-fill {
+    height: 100% !important;
+    background: var(--secondary) !important;
+    border-radius: 999px !important;
+    transition: width 0.1s linear !important;
+}
+
+/* Header Logo & Buttons */
+.m-header-top {
+    padding: 0.35rem 0.55rem !important;
+    gap: 6px !important;
+}
+
+.m-logo-pc-style .logo-symbol-img {
+    height: 32px !important;
+}
+
+.m-logo-pc-style .logo-divider-bar {
+    height: 25px !important;
+    margin: 0 5px !important;
+}
+
+.m-logo-pc-style .logo-text-title {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.1px !important;
+}
+
+.m-logo-pc-style .logo-text-subtitle {
+    font-size: 0.47rem !important;
+    letter-spacing: 0.15px !important;
+}
+
+.m-logo-pc-style .logo-text-num {
+    font-size: 0.40rem !important;
+    letter-spacing: 0.1px !important;
+}
+
+.m-header-actions {
+    gap: 5px !important;
+}
+
+.m-header-btn {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.85rem !important;
+}
+
+.m-btn-pill-donar {
+    padding: 4px 7px !important;
+    font-size: 0.72rem !important;
+    gap: 4px !important;
+}
+
+/* ==========================================================================
+   SLEEK FLOATING ACTIONS DOCK (COMPACT & NEVER COVERS CONTENT)
+   ========================================================================== */
+.m-floating-actions-dock {
+    position: fixed !important;
+    bottom: 14px !important;
+    right: 12px !important;
+    z-index: 998 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    pointer-events: auto !important;
+}
+
+.m-subnav-dock-circles {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    background: rgba(23, 74, 74, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    padding: 3px 6px !important;
+    border-radius: 999px !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.m-subnav-circle-btn {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    color: var(--primary) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.78rem !important;
+    text-decoration: none !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12) !important;
+    transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease !important;
+    flex-shrink: 0 !important;
+}
+
+.m-subnav-circle-btn:active,
+.m-subnav-circle-btn:hover {
+    background: #e9c46a !important;
+    color: #174A4A !important;
+    transform: scale(1.1) !important;
+}
+
+.m-floating-wa-btn {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    background: #25d366 !important;
+    color: #ffffff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 22px !important;
+    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.45) !important;
+    text-decoration: none !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.2s ease !important;
+}
+
+/* Ensure padding on non-home pages so floating dock never covers content */
+body.m-body {
+    padding-bottom: 70px !important;
+}
+
+body.m-body.home-page-layout {
+    padding-bottom: 0 !important;
+}
+
+/* Offset for smooth scrolling */
+section[id],
+div[id] {
+    scroll-margin-top: 70px !important;
+}
+
+
+/* Strictly hide standalone floating WA on mobile home carousel */
+body.home-page-layout .m-floating-wa,
+body.m-body.home-page-layout .m-floating-wa {
+    display: none !important;
+}
+
+/* ==========================================================================
+   DONACIONES & RECICLAJE MOBILE ADAPTATIONS (PREVENT OVERFLOW)
+   ========================================================================== */
+.donation-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+}
+
+.donation-card {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+.donation-card .btn-outline {
+    padding: 10px 4px !important;
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+}
+
+.benefits-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    margin-top: 20px !important;
+}
+
+.benefit-card {
+    padding: 20px 16px !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+/* Global Reset for Lists with Checkmarks / Viñetas */
+ul.checklist-unstyled,
+.benefit-checklist,
+.refugio-checklist {
+    list-style: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+}
+
+ul.checklist-unstyled li,
+.benefit-checklist li,
+.refugio-checklist li {
+    list-style: none !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+}
+
+ul.checklist-unstyled li i,
+.benefit-checklist li i,
+.refugio-checklist li i {
+    flex-shrink: 0 !important;
+    margin-top: 3px !important;
+}

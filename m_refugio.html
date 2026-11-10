@@ -16,11 +16,15 @@
         <!-- ─── HEADER MÓVIL SUPERIOR ─── -->
     <header class="m-header">
         <div class="m-header-top">
-            <a href="m_index.html" class="m-logo-link">
-                <img src="assets/img/cropped_circle_image.png" alt="Logo Asociación Civil" class="m-logo-badge">
-                <div class="m-logo-text">
-                    <span class="m-logo-main">ASOCIACIÓN CIVIL</span>
-                    <span class="m-logo-sub">AMIGOS DE LOS ANIMALES</span>
+                        <a href="m_index.html" class="logo-brand m-logo-pc-style" title="Asociación Civil Amigos de los Animales">
+                <img src="assets/img/logo_simbolo.png" alt="Asociación Civil Amigos de los Animales" class="logo-symbol-img">
+                <div class="logo-reveal-group">
+                    <span class="logo-divider-bar"></span>
+                    <div class="logo-text-details">
+                        <span class="logo-text-title">ASOCIACIÓN CIVIL AMIGOS</span>
+                        <span class="logo-text-subtitle">DE LOS ANIMALES NO HUMANOS</span>
+                        <span class="logo-text-num">Personería Jurídica Nº 1769</span>
+                    </div>
                 </div>
             </a>
 
@@ -142,7 +146,7 @@
                 <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border-top: 4px solid #e53935; box-shadow: var(--shadow-sm);">
                     <span class="badge badge-urgent" style="margin-bottom: 12px;">Urgencia Máxima</span>
                     <h3 style="margin-bottom: 10px;">Alimentación</h3>
-                    <ul style="color: var(--text-muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px;">
+                    <ul class="refugio-checklist">
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Alimento balanceado para adultos (bolsas de 15kg o 20kg)</li>
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Alimento especial para cachorros</li>
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Arroz parboil y alimento húmedo en lata (para convalecientes)</li>
@@ -152,7 +156,7 @@
                 <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border-top: 4px solid var(--secondary); box-shadow: var(--shadow-sm);">
                     <span class="badge badge-secondary" style="margin-bottom: 12px;">Salud y Curaciones</span>
                     <h3 style="margin-bottom: 10px;">Farmacia Veterinaria</h3>
-                    <ul style="color: var(--text-muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px;">
+                    <ul class="refugio-checklist">
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Pipetas antipulgas y garrapatas (todos los tamaños)</li>
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Desparasitantes internos (comprimidos)</li>
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Gasas, agua oxigenada, Pervinox y aerosol curabicheras</li>
@@ -162,7 +166,7 @@
                 <div style="background: var(--bg-card); padding: 25px; border-radius: var(--radius-md); border-top: 4px solid var(--primary); box-shadow: var(--shadow-sm);">
                     <span class="badge badge-primary" style="margin-bottom: 12px;">Infraestructura</span>
                     <h3 style="margin-bottom: 10px;">Mantenimiento e Higiene</h3>
-                    <ul style="color: var(--text-muted); font-size: 0.95rem; display: flex; flex-direction: column; gap: 8px;">
+                    <ul class="refugio-checklist">
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Lavandina, detergente y desinfectantes concentrados</li>
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Mantas, frazadas en buen estado y trapos de piso</li>
                         <li><i class="fas fa-check" style="color: var(--primary);"></i> Collares, correas y comederos de acero inoxidable</li>
@@ -276,34 +280,19 @@
     <script src="js/main.js"></script>
     <script src="js/refugio.js"></script>
 
-    <!-- ─── BOTÓN FLOTANTE WHATSAPP ─── -->
-    <a href="https://wa.me/5493404521246" class="m-floating-wa" target="_blank" title="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <!-- ─── BOTONES FLOTANTES: SUBSECCIONES & WHATSAPP ─── -->
+    <div class="m-floating-actions-dock">
+        <div class="m-subnav-dock-circles">
+            <a href="#necesidades-hoy" class="m-subnav-circle-btn" title="Necesidades de Hoy" aria-label="Necesidades de Hoy"><i class="fas fa-triangle-exclamation"></i></a>
+            <a href="#insumos-permanentes" class="m-subnav-circle-btn" title="Insumos Permanentes" aria-label="Insumos Permanentes"><i class="fas fa-boxes-stacked"></i></a>
+            <a href="#voluntariado" class="m-subnav-circle-btn" title="Sumate al Equipo" aria-label="Sumate al Equipo"><i class="fas fa-hand-holding-heart"></i></a>
+        </div>
+        <a href="https://wa.me/5493404521246" class="m-floating-wa-btn" target="_blank" title="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
 
-    <!-- ─── NAVEGACIÓN INFERIOR FIJA MÓVIL ─── -->
-    <nav class="m-bottom-nav">
-        <a href="m_index.html" class="m-nav-item ">
-            <i class="fas fa-home"></i>
-            <span>Inicio</span>
-        </a>
-        <a href="m_adopciones.html" class="m-nav-item ">
-            <i class="fas fa-paw"></i>
-            <span>Adopta</span>
-        </a>
-        <a href="m_final-feliz.html" class="m-nav-item ">
-            <i class="fas fa-heart"></i>
-            <span>Final Feliz</span>
-        </a>
-        <a href="m_foro.html" class="m-nav-item ">
-            <i class="fas fa-bullhorn"></i>
-            <span>Perdidos</span>
-        </a>
-        <button type="button" onclick="toggleMobileDrawer(true)" class="m-nav-item">
-            <i class="fas fa-bars"></i>
-            <span>Menú</span>
-        </button>
-    </nav>
+    
 
     <script src="js/mobile-app.js"></script>
 
